@@ -1,0 +1,6 @@
+@PruebaExperticket_Backend_HostAddress = http://localhost:5253
+
+GET {{PruebaExperticket_Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
