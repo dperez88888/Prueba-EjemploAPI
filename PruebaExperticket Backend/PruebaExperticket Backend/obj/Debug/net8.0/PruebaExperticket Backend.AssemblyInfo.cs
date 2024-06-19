@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebaExperticket Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a12116c00c37571e94ae4a6972eb078ecc451118")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebaExperticket Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebaExperticket Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

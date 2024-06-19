@@ -23,18 +23,31 @@ namespace PruebaExperticket_Backend.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
-            var entity = await _clienteService.GetCliente(id);
-
-            return Ok(entity);
+            try
+            {
+                var entity = await _clienteService.GetCliente(id);
+                return Ok(entity);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode (500, ex.Message);
+            }            
         }
 
         // GET PruebaExperticket/clientes
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var entity = await _clienteService.GetClientes();
+            try
+            {
+                var entity = await _clienteService.GetClientes();
 
-            return Ok(entity);
+                return Ok(entity);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
 
 
@@ -42,48 +55,74 @@ namespace PruebaExperticket_Backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ClienteRequest request)
         {
-            var model = new Cliente
+            try {
+                var model = new Cliente
+                {
+                    Nombre = request.Nombre,
+                    Apellidos = request.Apellidos,
+                    CodigoPostal = request.CodigoPostal,
+                    Sexo = request.Sexo,
+                    FechaNacimiento = request.FechaNacimiento,
+                    Direccion = request.Direccion,
+                    Pais = request.Pais,
+                    Email = request.Email
+                };
+
+                await _clienteService.AddCliente(model);
+
+                return Ok();
+            }
+            catch (Exception ex)
             {
-                Nombre = request.Nombre,
-                Apellidos = request.Apellidos,
-                CodigoPostal = request.CodigoPostal,
-                Sexo = request.Sexo,
-                FechaNacimiento = request.FechaNacimiento,
-                Direccion = request.Direccion,
-                Pais = request.Pais,
-                Email = request.Email
-            };
-
-            await _clienteService.AddCliente(model);
-
-            return Ok();
+                return StatusCode(500, ex.Message);
+            }            
         }
 
         // PUT PruebaExperticket/clientes/5
         [HttpPut]
-        public void Put([FromBody] ClienteRequest request)
+        public IActionResult Put([FromBody] ClienteRequest request)
         {
-            var model = new Cliente
+            try
             {
-                ClienteId = request.ClienteId,
-                Nombre = request.Nombre,
-                Apellidos = request.Apellidos,
-                CodigoPostal = request.CodigoPostal,
-                Sexo = request.Sexo,
-                FechaNacimiento = request.FechaNacimiento,
-                Direccion = request.Direccion,
-                Pais = request.Pais,
-                Email = request.Email
-            };
+                var model = new Cliente
+                {
+                    ClienteId = request.ClienteId,
+                    Nombre = request.Nombre,
+                    Apellidos = request.Apellidos,
+                    CodigoPostal = request.CodigoPostal,
+                    Sexo = request.Sexo,
+                    FechaNacimiento = request.FechaNacimiento,
+                    Direccion = request.Direccion,
+                    Pais = request.Pais,
+                    Email = request.Email
+                };
 
-            _clienteService.UpdateCliente(model);
+                _clienteService.UpdateCliente(model);
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
                 
         // DELETE PruebaExperticket/clientes/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
-            _clienteService.DeleteCliente(id);
+            try
+            {
+                _clienteService.DeleteCliente(id);
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
         }
     }
 }

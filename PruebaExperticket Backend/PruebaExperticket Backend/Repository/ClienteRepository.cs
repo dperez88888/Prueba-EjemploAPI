@@ -21,15 +21,20 @@ namespace PruebaExperticket_Backend.Repository
 
         public async Task DeleteCliente(int id)
         {
-            var entity = await GetCliente(id);
+            var entity = GetCliente(id);
 
             _contextDB.Clientes.Remove(entity);
-            _contextDB.SaveChanges();
+            _contextDB.SaveChangesAsync();
         }
 
-        public async Task<Cliente> GetCliente(int id)
+        public async Task<Cliente> GetClienteAsync(int id)
         {
             return await _contextDB.Clientes.FindAsync(id);
+        }
+
+        public Cliente GetCliente(int id)
+        {
+            return _contextDB.Clientes.Find(id);
         }
 
         public async Task<List<Cliente>> GetClientes()
@@ -38,16 +43,9 @@ namespace PruebaExperticket_Backend.Repository
         }
 
         public void UpdateCliente(Cliente cliente)
-        {
-            try
-            {                
-                _contextDB.Clientes.Update(cliente);
-                _contextDB.SaveChanges();
-                
-            }catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+        {                            
+            _contextDB.Clientes.Update(cliente);
+            _contextDB.SaveChangesAsync(); 
         }
     }
 }

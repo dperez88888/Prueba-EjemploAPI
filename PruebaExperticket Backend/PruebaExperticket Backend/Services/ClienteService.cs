@@ -33,7 +33,7 @@ namespace PruebaExperticket_Backend.Services
 
         public Task<Cliente> GetCliente(int clienteId)
         {
-            return _clienteRepository.GetCliente(clienteId);
+            return _clienteRepository.GetClienteAsync(clienteId);
         }
 
         public async Task UpdateCliente(Cliente cliente)

@@ -21,7 +21,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-builder.Services.AddDbContext<ContextDB>(options => options.UseInMemoryDatabase("MiDDBB")); // .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<ContextDB>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectionAzure")));
 
 builder.Services.AddTransient<IContextDB, ContextDB>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();

@@ -6,7 +6,9 @@ namespace PruebaExperticket_Backend.Repository
     {
         Task AddCliente(Cliente cliente);
 
-        Task<Cliente> GetCliente(int id);
+        Task<Cliente> GetClienteAsync(int id);
+
+        Cliente GetCliente(int id);
 
         Task<List<Cliente>> GetClientes();
 
