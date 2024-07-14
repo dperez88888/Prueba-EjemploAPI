@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PruebaExperticket_Backend.Context;
-using PruebaExperticket_Backend.Model;
+using PruebaEjemploAPI_Backend.Context;
+using PruebaEjemploAPI_Backend.Model;
 
-namespace PruebaExperticket_Backend.Repository
+namespace PruebaEjemploAPI_Backend.Repository
 {
     public class ClienteRepository : IClienteRepository
     {

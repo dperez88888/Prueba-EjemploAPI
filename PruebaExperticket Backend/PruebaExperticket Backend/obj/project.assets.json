@@ -4561,9 +4561,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Github\\Prueba Experticket\\PruebaExperticket Backend\\PruebaExperticket Backend\\PruebaExperticket Backend.csproj",
-      "projectName": "PruebaExperticket Backend",
-      "projectPath": "D:\\Github\\Prueba Experticket\\PruebaExperticket Backend\\PruebaExperticket Backend\\PruebaExperticket Backend.csproj",
+      "projectUniqueName": "D:\\Github\\Prueba Experticket\\PruebaExperticket Backend\\PruebaExperticket Backend\\PruebaEjemploAPI Backend.csproj",
+      "projectName": "PruebaEjemploAPI Backend",
+      "projectPath": "D:\\Github\\Prueba Experticket\\PruebaExperticket Backend\\PruebaExperticket Backend\\PruebaEjemploAPI Backend.csproj",
       "packagesPath": "C:\\Users\\David\\.nuget\\packages\\",
       "outputPath": "D:\\Github\\Prueba Experticket\\PruebaExperticket Backend\\PruebaExperticket Backend\\obj\\",
       "projectStyle": "PackageReference",

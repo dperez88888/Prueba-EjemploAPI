@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PruebaExperticket_Backend.Model;
+using PruebaEjemploAPI_Backend.Model;
 
-namespace PruebaExperticket_Backend.EntityConfig
+namespace PruebaEjemploAPI_Backend.EntityConfig
 {
     public class ClienteEntityConfig
     {

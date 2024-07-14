@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PruebaExperticket_Backend.Mapper;
-using PruebaExperticket_Backend.Model;
-using PruebaExperticket_Backend.Repository;
+using PruebaEjemploAPI_Backend.Mapper;
+using PruebaEjemploAPI_Backend.Model;
+using PruebaEjemploAPI_Backend.Repository;
 
-namespace PruebaExperticket_Backend.Services
+namespace PruebaEjemploAPI_Backend.Services
 {
     public class ClienteService : IClienteService
     {

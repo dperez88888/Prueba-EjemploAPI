@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace PruebaExperticket_Backend.Migrations
+namespace PruebaEjemploAPI_Backend.Migrations
 {
     /// <inheritdoc />
     public partial class MigracionInicial : Migration

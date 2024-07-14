@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using PruebaExperticket_Backend.Model;
+using PruebaEjemploAPI_Backend.Model;
 
-namespace PruebaExperticket_Backend.Context
+namespace PruebaEjemploAPI_Backend.Context
 {
     public interface IContextDB
     {

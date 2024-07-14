@@ -1,4 +1,4 @@
-﻿namespace PruebaExperticket_Backend.Requests
+﻿namespace PruebaEjemploAPI_Backend.Requests
 {
     // Request del controlador
     public class ClienteRequest

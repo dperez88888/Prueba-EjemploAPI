@@ -1,4 +1,4 @@
-namespace PruebaExperticket_Backend.Model
+namespace PruebaEjemploAPI_Backend.Model
 {
     public class Cliente
     {

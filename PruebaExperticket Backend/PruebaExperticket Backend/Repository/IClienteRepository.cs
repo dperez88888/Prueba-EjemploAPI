@@ -1,6 +1,6 @@
-﻿using PruebaExperticket_Backend.Model;
+﻿using PruebaEjemploAPI_Backend.Model;
 
-namespace PruebaExperticket_Backend.Repository
+namespace PruebaEjemploAPI_Backend.Repository
 {
     public interface IClienteRepository
     {

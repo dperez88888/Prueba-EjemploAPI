@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
-using PruebaExperticket_Backend.Model;
-using PruebaExperticket_Backend.Requests;
-using PruebaExperticket_Backend.Services;
+using PruebaEjemploAPI_Backend.Model;
+using PruebaEjemploAPI_Backend.Requests;
+using PruebaEjemploAPI_Backend.Services;
 
-namespace PruebaExperticket_Backend.Controllers
+namespace PruebaEjemploAPI_Backend.Controllers
 {
-    [Route("PruebaExperticket/[controller]")]
+    [Route("PruebaEjemploAPI/[controller]")]
     [ApiController]
     public class ClientesController : ControllerBase
     {              
@@ -19,7 +19,7 @@ namespace PruebaExperticket_Backend.Controllers
             _clienteService = clienteService;
         }
 
-        // GET PruebaExperticket/clientes/5
+        // GET PruebaEjemploAPI/clientes/5
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(int id)
         {
@@ -34,7 +34,7 @@ namespace PruebaExperticket_Backend.Controllers
             }            
         }
 
-        // GET PruebaExperticket/clientes
+        // GET PruebaEjemploAPI/clientes
         [HttpGet]
         public async Task<IActionResult> Get()
         {
@@ -51,7 +51,7 @@ namespace PruebaExperticket_Backend.Controllers
         }
 
 
-        // POST PruebaExperticket/clientes
+        // POST PruebaEjemploAPI/clientes
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] ClienteRequest request)
         {
@@ -78,7 +78,7 @@ namespace PruebaExperticket_Backend.Controllers
             }            
         }
 
-        // PUT PruebaExperticket/clientes/5
+        // PUT PruebaEjemploAPI/clientes/5
         [HttpPut]
         public IActionResult Put([FromBody] ClienteRequest request)
         {
@@ -108,7 +108,7 @@ namespace PruebaExperticket_Backend.Controllers
             }
         }
                 
-        // DELETE PruebaExperticket/clientes/5
+        // DELETE PruebaEjemploAPI/clientes/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {

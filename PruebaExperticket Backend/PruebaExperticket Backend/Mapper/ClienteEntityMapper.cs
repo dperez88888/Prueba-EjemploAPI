@@ -1,6 +1,6 @@
-﻿using PruebaExperticket_Backend.Model;
+﻿using PruebaEjemploAPI_Backend.Model;
 
-namespace PruebaExperticket_Backend.Mapper
+namespace PruebaEjemploAPI_Backend.Mapper
 {
     // Clase que mapea la clase cliente
     public static class ClienteEntityMapper

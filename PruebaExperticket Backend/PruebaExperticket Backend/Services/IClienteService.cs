@@ -1,6 +1,6 @@
-﻿using PruebaExperticket_Backend.Model;
+﻿using PruebaEjemploAPI_Backend.Model;
 
-namespace PruebaExperticket_Backend.Services
+namespace PruebaEjemploAPI_Backend.Services
 {
     public interface IClienteService
     {

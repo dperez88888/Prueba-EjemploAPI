@@ -1,7 +1,7 @@
-using PruebaExperticket_Backend.Services;
+using PruebaEjemploAPI_Backend.Services;
 using Microsoft.EntityFrameworkCore;
-using PruebaExperticket_Backend.Context;
-using PruebaExperticket_Backend.Repository;
+using PruebaEjemploAPI_Backend.Context;
+using PruebaEjemploAPI_Backend.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,8 +16,8 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
         Version = "v1",
-        Title = "Prueba Experticket",
-        Description = "Parte backend de la prueba de Experticket"
+        Title = "Prueba Ejemplo API",
+        Description = "Parte backend de la prueba de Ejemplo API"
     });
 });
 

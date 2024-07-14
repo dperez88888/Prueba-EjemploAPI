@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PruebaExperticket_Backend.Context;
+using PruebaEjemploAPI_Backend.Context;
 
 #nullable disable
 
-namespace PruebaExperticket_Backend.Migrations
+namespace PruebaEjemploAPI_Backend.Migrations
 {
     [DbContext(typeof(ContextDB))]
     [Migration("20240619142324_MigracionInicial")]
@@ -25,7 +25,7 @@ namespace PruebaExperticket_Backend.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("PruebaExperticket_Backend.Model.Cliente", b =>
+            modelBuilder.Entity("PruebaEjemploAPI_Backend.Model.Cliente", b =>
                 {
                     b.Property<int>("ClienteId")
                         .ValueGeneratedOnAdd()

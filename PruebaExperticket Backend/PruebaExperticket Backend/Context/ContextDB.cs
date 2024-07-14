@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
-using PruebaExperticket_Backend.EntityConfig;
-using PruebaExperticket_Backend.Model;
+using PruebaEjemploAPI_Backend.EntityConfig;
+using PruebaEjemploAPI_Backend.Model;
 
-namespace PruebaExperticket_Backend.Context
+namespace PruebaEjemploAPI_Backend.Context
 {
     public class ContextDB : DbContext, IContextDB
     {
