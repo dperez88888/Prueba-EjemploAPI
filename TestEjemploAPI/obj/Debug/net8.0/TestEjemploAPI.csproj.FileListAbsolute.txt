@@ -455,3 +455,4 @@ D:\Github\Prueba EjemploAPI\TestEjemploAPI\obj\Debug\net8.0\refint\TestEjemploAP
 D:\Github\Prueba EjemploAPI\TestEjemploAPI\obj\Debug\net8.0\TestEjemploAPI.pdb
 D:\Github\Prueba EjemploAPI\TestEjemploAPI\obj\Debug\net8.0\TestEjemploAPI.genruntimeconfig.cache
 D:\Github\Prueba EjemploAPI\TestEjemploAPI\obj\Debug\net8.0\ref\TestEjemploAPI.dll
+D:\Github\Prueba EjemploAPI\TestEjemploAPI\bin\Debug\net8.0\AutoMapper.dll

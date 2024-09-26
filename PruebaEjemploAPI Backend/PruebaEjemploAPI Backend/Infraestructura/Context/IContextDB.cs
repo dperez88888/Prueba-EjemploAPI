@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using PruebaEjemploAPI_Backend.Model;
+using PruebaEjemploAPI_Backend.Infraestructura.Model;
 
-namespace PruebaEjemploAPI_Backend.Context
+namespace PruebaEjemploAPI_Backend.Infraestructura.Context
 {
     public interface IContextDB
     {
@@ -11,8 +11,8 @@ namespace PruebaEjemploAPI_Backend.Context
 
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
         DatabaseFacade Database { get; }
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
-        int SaveChanges(CancellationToken cancellationToken = default(CancellationToken));
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
+        int SaveChanges(CancellationToken cancellationToken = default);
         void RemoveRange(IEnumerable<object> entities);
         EntityEntry Update(object entity);
 

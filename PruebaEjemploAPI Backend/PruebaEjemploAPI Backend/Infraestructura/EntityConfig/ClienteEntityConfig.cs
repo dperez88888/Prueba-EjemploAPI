@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PruebaEjemploAPI_Backend.Model;
+using PruebaEjemploAPI_Backend.Infraestructura.Model;
 
-namespace PruebaEjemploAPI_Backend.EntityConfig
+namespace PruebaEjemploAPI_Backend.Infraestructura.EntityConfig
 {
     public class ClienteEntityConfig
     {
@@ -16,7 +16,7 @@ namespace PruebaEjemploAPI_Backend.EntityConfig
             entityBuilder.Property(x => x.Sexo).HasMaxLength(1);
             entityBuilder.Property(x => x.FechaNacimiento).IsRequired();
             entityBuilder.Property(x => x.Pais).IsRequired();
-            entityBuilder.Property(x=> x.Direccion).HasMaxLength(150);
+            entityBuilder.Property(x => x.Direccion).HasMaxLength(150);
             entityBuilder.Property(x => x.CodigoPostal).HasMaxLength(6);
             entityBuilder.Property(x => x.Email).HasMaxLength(50);
         }

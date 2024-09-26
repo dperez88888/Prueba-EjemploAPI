@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "K7UZejD4MFxLUOpBCZJR/+ofxxWkafUlDia24fUkU87PDBXIRqcM8nQS0DvH8ec4Znti7GwqJ+JDNKlp+D6JwA==",
+  "dgSpecHash": "5gSOe2loNjVV0j3aupAWs9NhS8vne60BQoLGSn5PYGfjtuhLVmBqvSq7Ah5j+m77XsTXjR9zbIhzN8PiIBK4GQ==",
   "success": true,
   "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\TestEjemploAPI\\TestEjemploAPI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\David\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",

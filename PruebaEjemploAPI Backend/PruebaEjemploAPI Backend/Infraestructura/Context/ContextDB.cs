@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
-using PruebaEjemploAPI_Backend.EntityConfig;
-using PruebaEjemploAPI_Backend.Model;
+using PruebaEjemploAPI_Backend.Infraestructura.EntityConfig;
+using PruebaEjemploAPI_Backend.Infraestructura.Model;
 
-namespace PruebaEjemploAPI_Backend.Context
+namespace PruebaEjemploAPI_Backend.Infraestructura.Context
 {
     public class ContextDB : DbContext, IContextDB
     {
@@ -19,10 +19,10 @@ namespace PruebaEjemploAPI_Backend.Context
         {
             throw new NotImplementedException();
         }
-                
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            ClienteEntityConfig.SetClienteEntityConfig(modelBuilder.Entity<Cliente>());            
+            ClienteEntityConfig.SetClienteEntityConfig(modelBuilder.Entity<Cliente>());
         }
 
     }

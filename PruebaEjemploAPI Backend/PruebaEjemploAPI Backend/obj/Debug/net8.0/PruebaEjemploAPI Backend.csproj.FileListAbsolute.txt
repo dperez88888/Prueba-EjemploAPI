@@ -274,3 +274,4 @@ D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\ob
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\PruebaEjemploAPI Backend.pdb
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\PruebaEjemploAPI Backend.genruntimeconfig.cache
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\ref\PruebaEjemploAPI Backend.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\AutoMapper.dll

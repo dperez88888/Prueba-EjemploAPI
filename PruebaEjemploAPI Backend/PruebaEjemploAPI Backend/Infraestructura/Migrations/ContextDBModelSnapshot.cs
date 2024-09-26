@@ -3,20 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using PruebaEjemploAPI_Backend.Context;
+using PruebaEjemploAPI_Backend.Infraestructura.Context;
 
 #nullable disable
 
 namespace PruebaEjemploAPI_Backend.Migrations
 {
     [DbContext(typeof(ContextDB))]
-    [Migration("20240619142324_MigracionInicial")]
-    partial class MigracionInicial
+    partial class ContextDBModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

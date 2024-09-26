@@ -1,7 +1,9 @@
-using PruebaEjemploAPI_Backend.Services;
 using Microsoft.EntityFrameworkCore;
-using PruebaEjemploAPI_Backend.Context;
-using PruebaEjemploAPI_Backend.Repository;
+using PruebaEjemploAPI_Backend.Infraestructura.Context;
+using PruebaEjemploAPI_Backend.Infraestructura.Repository;
+using AutoMapper;
+using PruebaEjemploAPI_Backend.Transversal.Mapper;
+using PruebaEjemploAPI_Backend.Dominio.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,7 +27,19 @@ builder.Services.AddDbContext<ContextDB>(options => options.UseSqlServer(builder
 
 builder.Services.AddTransient<IContextDB, ContextDB>();
 builder.Services.AddTransient<IClienteRepository, ClienteRepository>();
-builder.Services.AddTransient<IClienteService, ClienteService>(); // Servicio del cliente inyectado
+builder.Services.AddScoped<IClienteAppService, ClienteAppService>(); // Servicio del cliente inyectado
+builder.Services.AddScoped<IClienteDomService, ClienteDomService>(); // Servicio del cliente inyectado
+
+var mapperConf = new MapperConfiguration(conf =>
+{
+    var profile = new ClienteEntityMapperProfile();
+    conf.AllowNullCollections = true;
+    conf.AddGlobalIgnore("Item");
+    conf.AddProfile(profile);
+});
+
+var mapper = mapperConf.CreateMapper();
+builder.Services.AddSingleton(mapper);
 
 var app = builder.Build();
 
@@ -43,5 +57,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
 public partial class Program { } // esta clase se crea parcial para que se haga pública y pueda ser accesible desde la clase de test

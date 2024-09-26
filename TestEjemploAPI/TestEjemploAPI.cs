@@ -2,7 +2,7 @@ using Azure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.AspNetCore.TestHost;
-using PruebaEjemploAPI_Backend.Model;
+using PruebaEjemploAPI_Backend.Infraestructura.Model;
 using System.Diagnostics;
 using System.Net.Http.Json;
 using TestEjemploAPI.Helper;
