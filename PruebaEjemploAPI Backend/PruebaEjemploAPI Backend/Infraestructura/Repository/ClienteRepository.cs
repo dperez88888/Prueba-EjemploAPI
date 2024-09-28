@@ -17,7 +17,7 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
         {
             _contextDB.Clientes.Add(cliente);
 
-            var result = _contextDB.SaveChanges();
+            var result = _contextDB.SaveChangesAsync()?.Result;
 
             return result > 0;
         }
@@ -28,7 +28,7 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
             if (entity != null)
             {
                 _contextDB.Clientes.Remove(entity);
-                var result = _contextDB.SaveChanges();
+                var result = _contextDB.SaveChangesAsync()?.Result;
                 return result > 0;
             }
 
@@ -50,7 +50,7 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
             var cli = _contextDB.Clientes.Update(cliente);
             if (cli != null)
             {
-                var result = _contextDB.SaveChanges();
+                var result = _contextDB.SaveChangesAsync()?.Result;
                 return result > 0;
             }
 
