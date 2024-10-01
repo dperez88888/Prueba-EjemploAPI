@@ -14,6 +14,7 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Context
         }
 
         public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         public int SaveChanges(CancellationToken cancellationToken = default)
         {
@@ -23,6 +24,7 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             ClienteEntityConfig.SetClienteEntityConfig(modelBuilder.Entity<Cliente>());
+            UsuarioEntityConfig.SetUsuarioEntityConfig(modelBuilder.Entity<Usuario>());
         }
 
     }
