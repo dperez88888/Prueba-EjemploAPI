@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pc9Lm6IaN/4fvw3PjjxQcUPy7cMpBEKTX2pJ/8YirI4Nq9ByTCVS31m2MCJg/mJ/f8CQl01zT3CFpykYhvM0AQ==",
+  "dgSpecHash": "kSU2vJUorBruCuTd3TUGED7cmgD1Uha3vZyBXv0s5eF9OP3pxGjSr+rIUOMWXDC5ubjyWRbXLSbvFfAxOrm+QQ==",
   "success": true,
   "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\TestEjemploAPI\\TestEjemploAPI.csproj",
   "expectedPackageFiles": [
@@ -67,6 +67,7 @@
     "C:\\Users\\David\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.8.0\\microsoft.testplatform.objectmodel.17.8.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.testplatform.testhost\\17.8.0\\microsoft.testplatform.testhost.17.8.0.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.6\\microsoft.visualstudio.azure.containers.tools.targets.1.19.6.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.win32.primitives\\4.3.0\\microsoft.win32.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
