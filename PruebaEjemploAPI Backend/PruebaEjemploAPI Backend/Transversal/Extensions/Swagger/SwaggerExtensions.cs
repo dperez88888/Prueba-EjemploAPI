@@ -1,4 +1,5 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.OpenApi.Models;
 
 namespace PruebaEjemploAPI_Backend.Transversal.Extensions.Swagger
 {
@@ -16,32 +17,25 @@ namespace PruebaEjemploAPI_Backend.Transversal.Extensions.Swagger
                     Description = "Parte backend de la prueba de Ejemplo API"
                 });
 
-                c.AddSecurityDefinition("Authorization", new OpenApiSecurityScheme
+                var secScheme = new OpenApiSecurityScheme
                 {
                     Description = "Authorization by API key",
                     In = ParameterLocation.Header,
-                    Type = SecuritySchemeType.ApiKey,
+                    Type = SecuritySchemeType.Http,
                     Name = "Authorization",
-                    Scheme = "Authorization"
-                });
+                    Scheme = "bearer",
+                    Reference = new OpenApiReference
+                    {
+                        Id = JwtBearerDefaults.AuthenticationScheme,
+                        Type = ReferenceType.SecurityScheme
+                    }
+                };
+
+                c.AddSecurityDefinition(secScheme.Reference.Id, secScheme);
 
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement()
                 {
-                    {
-                        new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
-                            {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Authorization"
-                            },
-                            Scheme = "oauth2",
-                            Name = "Authorization",
-                            In = ParameterLocation.Header,
-
-                        },
-                        new List<string>()
-                    }
+                    { secScheme, new List<string>()}
                 });
             });
 
