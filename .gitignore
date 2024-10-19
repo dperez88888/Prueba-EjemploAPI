@@ -50,3 +50,7 @@
 /PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/PruebaEjemploAPI Backend.exe
 /PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/PruebaEjemploAPI Backend.pdb
 /PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/TestEjemploAPI/bin/Release/net8.0
+/TestEjemploAPI/obj/Release/net8.0
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Release/net8.0
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/obj
