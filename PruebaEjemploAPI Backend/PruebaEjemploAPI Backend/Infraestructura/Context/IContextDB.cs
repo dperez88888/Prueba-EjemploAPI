@@ -9,6 +9,8 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Context
     {
         DbSet<Cliente> Clientes { get; set; }
 
+        DbSet<Usuario> Usuarios { get; set; }
+
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
         DatabaseFacade Database { get; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);

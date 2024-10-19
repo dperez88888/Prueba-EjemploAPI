@@ -37,8 +37,20 @@
 /PruebaEjemploAPI Backend/.vs/PruebaEjemploAPI/v17/.suo
 /PruebaEjemploAPI Backend/.vs/PruebaEjemploAPI/v17/DocumentLayout.json
 /PruebaEjemploAPI Backend/.vs/PruebaEjemploAPI/FileContentIndex
-/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/appsettings.json
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/PruebaEjemploAPI Backend.deps.json
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/PruebaEjemploAPI Backend.dll
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/PruebaEjemploAPI Backend.exe
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/PruebaEjemploAPI Backend.pdb
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /TestEjemploAPI/bin/Release/net8.0
-/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/obj/Release/net8.0
-/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/obj/Container
 /TestEjemploAPI/obj/Release/net8.0
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/bin/Release/net8.0
+/PruebaEjemploAPI Backend/PruebaEjemploAPI Backend/obj
