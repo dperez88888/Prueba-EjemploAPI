@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Microsoft.VisualBasic;
 using PruebaEjemploAPI_Backend.Infraestructura.Model;
+using Cst = PruebaEjemploAPI_Backend.Transversal.Common;
 
 namespace PruebaEjemploAPI_Backend.Infraestructura.EntityConfig
 {
@@ -9,12 +11,12 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.EntityConfig
         {
             entityBuilder.HasKey(x => x.UsuarioId);
             entityBuilder.Property(x => x.Nombre).IsRequired();
-            entityBuilder.Property(x => x.Nombre).HasMaxLength(100);
+            entityBuilder.Property(x => x.Nombre).HasMaxLength(Cst.Constants.NOMBRE_MAX_LENGTH);
             entityBuilder.Property(x => x.Apellidos).IsRequired();
-            entityBuilder.Property(x => x.Apellidos).HasMaxLength(200);
+            entityBuilder.Property(x => x.Apellidos).HasMaxLength(Cst.Constants.APELLIDOSUSR_MAX_LENGTH);
             entityBuilder.Property(x => x.Password).IsRequired();
-            entityBuilder.Property(x => x.Password).HasMaxLength(20);  
-            entityBuilder.Property(x => x.Token).HasMaxLength(500);
+            entityBuilder.Property(x => x.Password).HasMaxLength(Cst.Constants.PASSWORD_MAX_LENGTH);  
+            entityBuilder.Property(x => x.Token).HasMaxLength(Cst.Constants.TOKEN_MAX_LENGTH);
         }
     }
 }

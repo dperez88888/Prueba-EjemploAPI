@@ -14,6 +14,7 @@ using PruebaEjemploAPI_Backend.Transversal.Extensions.DB;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.MappingServices;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Mapper;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Authentication;
+using PruebaEjemploAPI_Backend.Transversal.Extensions.Validator;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,7 @@ builder.Services.AddDatabaseConf(appSettingsSection);
 builder.Services.AddMappingServices();
 builder.Services.AddMapper();
 builder.Services.AddAuthenticationServices(appSettingsSection);
+builder.Services.AddValidator();
 
 var app = builder.Build();
 

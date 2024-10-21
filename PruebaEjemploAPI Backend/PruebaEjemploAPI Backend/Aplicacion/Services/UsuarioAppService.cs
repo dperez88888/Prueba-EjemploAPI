@@ -7,12 +7,8 @@ using PruebaEjemploAPI_Backend.Aplicacion.DTO;
 using PruebaEjemploAPI_Backend.Dominio.DTO;
 using PruebaEjemploAPI_Backend.Transversal.Common;
 using PruebaEjemploAPI_Backend.Transversal.Exceptions;
-using System.IdentityModel.Tokens.Jwt;
-using System.Text;
-using PruebaEjemploAPI_Backend.Transversal.Settings;
-using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System.Security.Claims;
+using PruebaEjemploAPI_Backend.Aplicacion.Validators;
+
 
 namespace PruebaEjemploAPI_Backend.Dominio.Services
 {
@@ -20,12 +16,14 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
     {
 
         private readonly IUsuarioDomService _usuarioDomService;
-        private readonly IMapper _mapper;        
+        private readonly IMapper _mapper;
+        private readonly UsuarioValidator _usuarioValidator;
 
-        public UsuarioAppService(IUsuarioDomService usuarioDomService, IMapper mapper)
+        public UsuarioAppService(IUsuarioDomService usuarioDomService, IMapper mapper, UsuarioValidator usuarioValidator)
         {
             _usuarioDomService = usuarioDomService;
-            _mapper = mapper;            
+            _mapper = mapper;
+            _usuarioValidator = usuarioValidator;
         }
 
         public Response<bool> AddUsuario(UsuarioDTO usuario)
@@ -270,9 +268,13 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         {
             var response = new Response<UsuarioDTO>();
 
-            if (string.IsNullOrEmpty(nombre) || string.IsNullOrEmpty(password))
+            var validation = _usuarioValidator.Validate(new UsuarioDTO() { Nombre = nombre, Password = password, Apellidos = "x"});
+
+            if (!validation.IsValid)
             {
-                response.Message = "Se ha introducido algún valor vacío";
+                response.Message = "Errores de Validación";
+                response.IsSuccess = false;
+                response.Errors = validation.Errors;
             }
             else
             {

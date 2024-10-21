@@ -34,7 +34,7 @@ namespace PruebaEjemploAPI_Backend.Servicios.Controllers
                 return response.Data != null ? Ok(response) : NotFound(response.Message);
             }
 
-            return BadRequest(response.Message);
+            return BadRequest(response);
         }
 
         // GET PruebaEjemploAPI/usuarios/get/5

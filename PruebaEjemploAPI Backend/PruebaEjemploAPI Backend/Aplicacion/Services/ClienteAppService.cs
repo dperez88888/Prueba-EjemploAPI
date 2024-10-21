@@ -6,6 +6,7 @@ using PruebaEjemploAPI_Backend.Transversal.Mapper;
 using PruebaEjemploAPI_Backend.Aplicacion.DTO;
 using PruebaEjemploAPI_Backend.Dominio.DTO;
 using PruebaEjemploAPI_Backend.Transversal.Common;
+using PruebaEjemploAPI_Backend.Aplicacion.Validators;
 
 namespace PruebaEjemploAPI_Backend.Dominio.Services
 {
@@ -14,16 +15,27 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
 
         private readonly IClienteDomService _clienteDomService;
         private readonly IMapper _mapper;
+        private readonly ClienteValidator _clienteValidator;
 
-        public ClienteAppService(IClienteDomService clienteDomService, IMapper mapper)
+        public ClienteAppService(IClienteDomService clienteDomService, IMapper mapper, ClienteValidator clienteValidator)
         {
             _clienteDomService = clienteDomService;
             _mapper = mapper;
+            _clienteValidator = clienteValidator;
         }
 
         public Response<bool> AddCliente(ClienteDTO cliente)
         {
             var res = new Response<bool>();
+
+            var validation = _clienteValidator.Validate(cliente);
+
+            if (!validation.IsValid)
+            {
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+            }
 
             try
             {                
@@ -49,6 +61,15 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         public async Task<Response<bool>> AddClienteAsync(ClienteDTO cliente)
         {
             var res = new Response<bool>();
+
+            var validation = _clienteValidator.Validate(cliente);
+
+            if (!validation.IsValid)
+            {
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+            }
 
             try
             {
@@ -213,6 +234,15 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         {
             var res = new Response<bool>();
 
+            var validation = _clienteValidator.Validate(cliente);
+
+            if (!validation.IsValid)
+            {
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+            }
+
             try
             {
                 var cli = _mapper.Map<ClienteDTO, ClienteDomDTO>(cliente);
@@ -237,6 +267,15 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         public async Task<Response<bool>> UpdateClienteAsync(ClienteDTO cliente)
         {
             var res = new Response<bool>();
+
+            var validation = _clienteValidator.Validate(cliente);
+
+            if (!validation.IsValid)
+            {
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+            }
 
             try
             {
