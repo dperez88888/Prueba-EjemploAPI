@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "uGpfOs+a2zpMNjYgsbFsaLJ5aOBR+5MI56Vo+a+5IemNpi1MxdSyuIY8+7uLlX86lWUc204GhASj+r0TMkJN7Q==",
+  "dgSpecHash": "5IBQNWa5EjhJtWyjiIzi/HqVlyDtIbTRp8amPL5m4It3wFxsI8JrtxAOQZ0JlLb+3n146lBZ8ZaI/wSs5wsX6w==",
   "success": true,
   "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\TestEjemploAPI\\TestEjemploAPI.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,6 @@
     "C:\\Users\\David\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\fluentvalidation\\11.10.0\\fluentvalidation.11.10.0.nupkg.sha512",
-    "C:\\Users\\David\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.10.0\\fluentvalidation.dependencyinjectionextensions.11.10.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\8.0.7\\microsoft.aspnetcore.mvc.testing.8.0.7.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.aspnetcore.testhost\\8.0.7\\microsoft.aspnetcore.testhost.8.0.7.nupkg.sha512",
