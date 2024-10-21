@@ -5,7 +5,12 @@ VisualStudioVersion = 17.9.34723.18
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruebaEjemploAPI Backend", "PruebaEjemploAPI Backend\PruebaEjemploAPI Backend.csproj", "{51C2FF1A-2CBA-453B-974F-B3401B65FB07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEjemploAPI", "..\TestEjemploAPI\TestEjemploAPI.csproj", "{55A02B3D-E012-44ED-8981-4B79AF4466EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEjemploAPI", "..\TestEjemploAPI\TestEjemploAPI.csproj", "{55A02B3D-E012-44ED-8981-4B79AF4466EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C5BBAA2B-1A0F-4234-816B-6480DEF1BCD0}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
