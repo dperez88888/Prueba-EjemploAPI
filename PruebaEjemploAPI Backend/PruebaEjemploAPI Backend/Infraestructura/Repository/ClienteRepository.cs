@@ -15,11 +15,16 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
          
         bool IClienteRepository.AddCliente(Cliente cliente)
         {
-            _contextDB.Clientes.Add(cliente);
+            if (cliente != null)
+            {
+                _contextDB.Clientes.Add(cliente);
 
-            var result = _contextDB.SaveChangesAsync()?.Result;
+                var result = _contextDB.SaveChangesAsync()?.Result;
 
-            return result > 0;
+                return result > 0;
+            }
+
+            return false;
         }
 
         bool IClienteRepository.DeleteCliente(int clienteId)
@@ -47,23 +52,32 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
 
         bool IClienteRepository.UpdateCliente(Cliente cliente)
         {
-            var cli = _contextDB.Clientes.Update(cliente);
-            if (cli != null)
+            if (cliente != null)
             {
-                var result = _contextDB.SaveChangesAsync()?.Result;
-                return result > 0;
+                var cli = _contextDB.Clientes.Update(cliente);
+                if (cli != null)
+                {
+                    var result = _contextDB.SaveChangesAsync()?.Result;
+                    return result > 0;
+                }
             }
 
             return false;
+
         }
 
         public async Task<bool> AddClienteAsync(Cliente cliente)
         {
-            await _contextDB.Clientes.AddAsync(cliente);
-            
-            var result = await _contextDB.SaveChangesAsync();
+            if (cliente != null)
+            {
+                await _contextDB.Clientes.AddAsync(cliente);
 
-            return result > 0;
+                var result = await _contextDB.SaveChangesAsync();
+
+                return result > 0;
+            } 
+            
+            return false;
         }
 
         public async Task<Cliente?> GetClienteAsync(int id)
@@ -91,11 +105,15 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
 
         public async Task<bool> UpdateClienteAsync(Cliente cliente)
         {
-            var cli = _contextDB.Clientes.Update(cliente);
-            if (cli != null)
+            if (cliente != null)
             {
-               var result = await _contextDB.SaveChangesAsync();
-                return result > 0;
+                var cli = _contextDB.Clientes.Update(cliente);
+                if (cli != null)
+                {
+                    var result = await _contextDB.SaveChangesAsync();
+                    return result > 0;
+                }
+
             }
 
             return false;

@@ -275,3 +275,8 @@ D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\ob
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\PruebaEjemploAPI Backend.genruntimeconfig.cache
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\ref\PruebaEjemploAPI Backend.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\AutoMapper.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\PruebaEjemploAPI Backend.xml
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\FluentValidation.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\PruebaEjemploAPI Backend.xml

@@ -25,13 +25,14 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwagger();
 
-var appSettingsSection = builder.Configuration.GetSection("ConfigToken");
+var appSettingsSection = builder.Configuration.GetSection("Config");
 builder.Services.Configure<AppSettings>(appSettingsSection);
 
 builder.Services.AddDatabaseConf(appSettingsSection);
 builder.Services.AddMappingServices();
 builder.Services.AddMapper();
-builder.Services.AddAuthenticationServices(appSettingsSection);
+var appSettingsTokenSection = builder.Configuration.GetSection("ConfigToken");
+builder.Services.AddAuthenticationServices(appSettingsTokenSection);
 builder.Services.AddValidator();
 
 var app = builder.Build();
