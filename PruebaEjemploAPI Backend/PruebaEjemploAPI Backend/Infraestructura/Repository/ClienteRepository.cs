@@ -37,7 +37,7 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
                 return result > 0;
             }
 
-            return true;
+            return false;
         }
 
         public Cliente? GetCliente(int id)

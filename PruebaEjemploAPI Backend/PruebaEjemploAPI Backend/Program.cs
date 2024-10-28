@@ -25,13 +25,11 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwagger();
 
-var appSettingsSection = builder.Configuration.GetSection("Config");
-builder.Services.Configure<AppSettings>(appSettingsSection);
-
-builder.Services.AddDatabaseConf(appSettingsSection);
+builder.Services.AddDatabaseConf(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
 builder.Services.AddMappingServices();
 builder.Services.AddMapper();
 var appSettingsTokenSection = builder.Configuration.GetSection("ConfigToken");
+builder.Services.Configure<AppSettings>(appSettingsTokenSection);
 builder.Services.AddAuthenticationServices(appSettingsTokenSection);
 builder.Services.AddValidator();
 
