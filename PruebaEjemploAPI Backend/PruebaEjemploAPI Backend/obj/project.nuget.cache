@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "qPC4vQxhWfQUHuLwWzWcXG0bMjR0z+knUiquySqDR+8x9VV29EIFxhL8CkTRVQQHBjVqggVlFuHCyYJ7UoeugA==",
+  "dgSpecHash": "yQRNXApSJmyiICJm3StAh+q14+L8QReSzPwQ0Dn4W0XLv3trAmbZiWeueP9jtOyDC4yUT1eA66DT7ZVBTZI7Kw==",
   "success": true,
   "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI Backend\\PruebaEjemploAPI Backend.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\David\\.nuget\\packages\\asp.versioning.abstractions\\8.1.0\\asp.versioning.abstractions.8.1.0.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\asp.versioning.http\\8.1.0\\asp.versioning.http.8.1.0.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\asp.versioning.mvc\\8.1.0\\asp.versioning.mvc.8.1.0.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\8.1.0\\asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

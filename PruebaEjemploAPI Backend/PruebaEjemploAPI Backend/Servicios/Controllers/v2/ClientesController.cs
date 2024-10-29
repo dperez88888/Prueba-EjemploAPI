@@ -1,43 +1,30 @@
-ï»¿using Microsoft.AspNetCore.Authorization;
+using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
 using PruebaEjemploAPI_Backend.Aplicacion.DTO;
 using PruebaEjemploAPI_Backend.Dominio.Services;
-using PruebaEjemploAPI_Backend.Transversal.Settings;
 
-namespace PruebaEjemploAPI_Backend.Servicios.Controllers
+namespace PruebaEjemploAPI_Backend.Servicios.Controllers.v2
 {
     [Authorize]
     [Route("PruebaEjemploAPI/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    [ApiVersion("2.0")]
+    public class ClientesController : ControllerBase
     {
 
-        private readonly ILogger<UsuariosController> _logger;
-        private readonly IUsuarioAppService _usuarioService;        
+        private readonly ILogger<ClientesController> _logger;
+        private readonly IClienteAppService _clienteService;
 
-        public UsuariosController(ILogger<UsuariosController> logger, IUsuarioAppService usuarioService)
+        public ClientesController(ILogger<ClientesController> logger, IClienteAppService clienteService)
         {
             _logger = logger;
-            _usuarioService = usuarioService;            
+            _clienteService = clienteService;
         }
 
-        // MÃ©todos SÃ­ncronos
-        [AllowAnonymous]
-        [HttpPost("auth")]
-        public IActionResult Authenticate([FromBody] UsuarioDTO usuarioDTO)
-        {
-            var response = _usuarioService.Authenticate(usuarioDTO.Nombre, usuarioDTO.Password);
+        // Métodos Síncronos
 
-            if(response.IsSuccess)
-            {
-                return response.Data != null ? Ok(response) : NotFound(response.Message);
-            }
-
-            return BadRequest(response);
-        }
-
-        // GET PruebaEjemploAPI/usuarios/get/5
+        // GET PruebaEjemploAPI/clientes/get/5
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -45,49 +32,49 @@ namespace PruebaEjemploAPI_Backend.Servicios.Controllers
             {
                 return BadRequest();
             }
-            var res = _usuarioService.GetUsuario(id);
+            var res = _clienteService.GetCliente(id);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
-        // GET PruebaEjemploAPI/usuarios/get
+        // GET PruebaEjemploAPI/clientes/get
         [HttpGet]
         public IActionResult Get()
         {
-            var res = _usuarioService.GetUsuarios();
+            var res = _clienteService.GetClientes();
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
 
-        // POST PruebaEjemploAPI/usuarios/Post
+        // POST PruebaEjemploAPI/clientes/Post
         [HttpPost]
-        public IActionResult Post([FromBody] UsuarioDTO request)
+        public IActionResult Post([FromBody] ClienteDTO request)
         {
             if (request is null)
             {
                 return BadRequest();
             }
-            var res = _usuarioService.AddUsuario(request);
+            var res = _clienteService.AddCliente(request);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
 
         }
 
-        // PUT PruebaEjemploAPI/usuarios/5
+        // PUT PruebaEjemploAPI/clientes/5
         [HttpPut]
-        public IActionResult Put([FromBody] UsuarioDTO request)
+        public IActionResult Put([FromBody] ClienteDTO request)
         {
             if (request is null)
             {
                 return BadRequest();
             }
-            var res = _usuarioService.UpdateUsuario(request);
+            var res = _clienteService.UpdateCliente(request);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
-        // DELETE PruebaEjemploAPI/usuarios/5
+        // DELETE PruebaEjemploAPI/clientes/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -95,14 +82,14 @@ namespace PruebaEjemploAPI_Backend.Servicios.Controllers
             {
                 return BadRequest();
             }
-            var res = _usuarioService.DeleteUsuario(id);
+            var res = _clienteService.DeleteCliente(id);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
-        // MÃ©todos asÃ­ncronos
+        // Métodos asíncronos
 
-        // GET PruebaEjemploAPI/usuarios/5
+        // GET PruebaEjemploAPI/clientes/5
         [HttpGet("async/{id}")]
         public async Task<IActionResult> GetAsync(int id)
         {
@@ -110,49 +97,49 @@ namespace PruebaEjemploAPI_Backend.Servicios.Controllers
             {
                 return BadRequest();
             }
-            var res = await _usuarioService.GetUsuarioAsync(id);
+            var res = await _clienteService.GetClienteAsync(id);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
-        // GET PruebaEjemploAPI/usuarios
+        // GET PruebaEjemploAPI/clientes
         [HttpGet("async")]
         public async Task<IActionResult> GetAsync()
         {
-            var res = await _usuarioService.GetUsuariosAsync();
+            var res = await _clienteService.GetClientesAsync();
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
 
-        // POST PruebaEjemploAPI/usuarios
+        // POST PruebaEjemploAPI/clientes
         [HttpPost("async")]
-        public async Task<IActionResult> PostAsync([FromBody] UsuarioDTO request)
+        public async Task<IActionResult> PostAsync([FromBody] ClienteDTO request)
         {
             if (request is null)
             {
                 return BadRequest();
             }
-            var res = await _usuarioService.AddUsuarioAsync(request);
+            var res = await _clienteService.AddClienteAsync(request);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
 
         }
 
-        // PUT PruebaEjemploAPI/usuarios/5
+        // PUT PruebaEjemploAPI/clientes/5
         [HttpPut("async")]
-        public async Task<IActionResult> PutAsync([FromBody] UsuarioDTO request)
+        public async Task<IActionResult> PutAsync([FromBody] ClienteDTO request)
         {
             if (request is null)
             {
                 return BadRequest();
             }
-            var res = await _usuarioService.UpdateUsuarioAsync(request);
+            var res = await _clienteService.UpdateClienteAsync(request);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
-        // DELETE PruebaEjemploAPI/usuarios/5
+        // DELETE PruebaEjemploAPI/clientes/5
         [HttpDelete("async/{id}")]
         public async Task<IActionResult> DeleteAsync(int id)
         {
@@ -160,12 +147,11 @@ namespace PruebaEjemploAPI_Backend.Servicios.Controllers
             {
                 return BadRequest();
             }
-            var res = await _usuarioService.DeleteUsuarioAsync(id);
+            var res = await _clienteService.DeleteClienteAsync(id);
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
 
     }
-    
 }

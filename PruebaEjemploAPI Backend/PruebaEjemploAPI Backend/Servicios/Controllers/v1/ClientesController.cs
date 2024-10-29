@@ -1,13 +1,15 @@
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PruebaEjemploAPI_Backend.Aplicacion.DTO;
 using PruebaEjemploAPI_Backend.Dominio.Services;
 
-namespace PruebaEjemploAPI_Backend.Servicios.Controllers
+namespace PruebaEjemploAPI_Backend.Servicios.Controllers.v1
 {
     [Authorize]
     [Route("PruebaEjemploAPI/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class ClientesController : ControllerBase
     {
 
@@ -31,14 +33,14 @@ namespace PruebaEjemploAPI_Backend.Servicios.Controllers
                 return BadRequest();
             }
             var res = _clienteService.GetCliente(id);
-            
-            return res.IsSuccess? Ok(res) : BadRequest(res.Message);
+
+            return res.IsSuccess ? Ok(res) : BadRequest(res.Message);
         }
 
         // GET PruebaEjemploAPI/clientes/get
         [HttpGet]
         public IActionResult Get()
-        {            
+        {
             var res = _clienteService.GetClientes();
 
             return res.IsSuccess ? Ok(res) : BadRequest(res.Message);

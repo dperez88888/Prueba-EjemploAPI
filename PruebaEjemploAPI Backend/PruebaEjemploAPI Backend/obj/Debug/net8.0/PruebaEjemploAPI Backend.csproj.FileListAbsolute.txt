@@ -280,3 +280,7 @@ D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bi
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\PruebaEjemploAPI Backend.xml
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Asp.Versioning.Http.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll

@@ -15,6 +15,8 @@ using PruebaEjemploAPI_Backend.Transversal.Extensions.MappingServices;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Mapper;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Authentication;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Validator;
+using PruebaEjemploAPI_Backend.Transversal.Extensions.Versioning;
+using Asp.Versioning.ApiExplorer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,7 +24,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-
+builder.Services.AddVersioning();
 builder.Services.AddSwagger();
 
 builder.Services.AddDatabaseConf(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
@@ -35,12 +37,17 @@ builder.Services.AddValidator();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Prueba Ejemplo API");
+    foreach (var description in provider.ApiVersionDescriptions)
+    {
+        c.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", description.GroupName.ToUpperInvariant());
+    }
+});
 
 app.UseHttpsRedirection();
 
