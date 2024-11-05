@@ -17,6 +17,8 @@ using PruebaEjemploAPI_Backend.Transversal.Extensions.Authentication;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Validator;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Versioning;
 using Asp.Versioning.ApiExplorer;
+using HealthChecks.UI.Client;
+using PruebaEjemploAPI_Backend.Transversal.Extensions.HealthCheck;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +36,7 @@ var appSettingsTokenSection = builder.Configuration.GetSection("ConfigToken");
 builder.Services.Configure<AppSettings>(appSettingsTokenSection);
 builder.Services.AddAuthenticationServices(appSettingsTokenSection);
 builder.Services.AddValidator();
+builder.Services.AddHealthCheck(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
 
 var app = builder.Build();
 
@@ -55,6 +58,13 @@ app.UseAuthorization();
 app.UseAuthentication();
 
 app.MapControllers();
+
+app.MapHealthChecksUI();
+app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks.HealthCheckOptions
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
 
 app.Run();
 public partial class Program { } // esta clase se crea parcial para que se haga pública y pueda ser accesible desde la clase de test
