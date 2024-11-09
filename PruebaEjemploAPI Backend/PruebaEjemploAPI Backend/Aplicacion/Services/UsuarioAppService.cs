@@ -9,7 +9,6 @@ using PruebaEjemploAPI_Backend.Transversal.Common;
 using PruebaEjemploAPI_Backend.Transversal.Exceptions;
 using PruebaEjemploAPI_Backend.Aplicacion.Validators;
 
-
 namespace PruebaEjemploAPI_Backend.Dominio.Services
 {
     public class UsuarioAppService : IUsuarioAppService
@@ -18,12 +17,14 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         private readonly IUsuarioDomService _usuarioDomService;
         private readonly IMapper _mapper;
         private readonly UsuarioValidator _usuarioValidator;
+        private readonly IAppLogger<IUsuarioAppService> _logger;
 
-        public UsuarioAppService(IUsuarioDomService usuarioDomService, IMapper mapper, UsuarioValidator usuarioValidator)
+        public UsuarioAppService(IUsuarioDomService usuarioDomService, IMapper mapper, UsuarioValidator usuarioValidator, IAppLogger<IUsuarioAppService> logger)
         {
             _usuarioDomService = usuarioDomService;
             _mapper = mapper;
             _usuarioValidator = usuarioValidator;
+            _logger = logger;
         }
 
         public Response<bool> AddUsuario(UsuarioDTO usuario)
@@ -39,6 +40,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Insertado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
                 }
 
             }
@@ -46,6 +48,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuario.Nombre + " " + usuario.Apellidos);
             }
 
             return res; 
@@ -64,6 +67,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Insertado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
                 }
 
             }
@@ -71,6 +75,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuario.Nombre + " " + usuario.Apellidos);
             }
 
             return res;
@@ -87,6 +92,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Borrado con éxito";
+                    _logger.LogInfo(res.Message + " " + usuarioId);
                 }
 
             }
@@ -94,6 +100,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuarioId);
             }
 
             return res;
@@ -110,6 +117,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Borrado con éxito";
+                    _logger.LogInfo(res.Message + " " + usuarioId);
                 }
 
             }
@@ -117,6 +125,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuarioId);
             }
 
             return res;
@@ -133,6 +142,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Obtenido con éxito";
+                    _logger.LogInfo(res.Message + " " + usuarioId);
                 }
 
             }
@@ -140,6 +150,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuarioId);
             }
 
             return res;
@@ -156,6 +167,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Obtenido con éxito";
+                    _logger.LogInfo(res.Message + " " + usuarioId);
                 }
 
             }
@@ -163,6 +175,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuarioId);
             }
 
             return res;
@@ -179,6 +192,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuarios Obtenidos con éxito";
+                    _logger.LogInfo(res.Message);
                 }
 
             }
@@ -186,6 +200,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message);
             }
 
             return res;
@@ -202,6 +217,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuarios Obtenidos con éxito";
+                    _logger.LogInfo(res.Message);
                 }
 
             }
@@ -209,6 +225,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message);
             }
 
             return res;
@@ -227,6 +244,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Actualizado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.UsuarioId);
                 }
 
             }
@@ -234,6 +252,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuario.UsuarioId);
             }
 
             return res;
@@ -252,6 +271,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Usuario Actualizado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.UsuarioId);
                 }
 
             }
@@ -259,6 +279,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + usuario.UsuarioId);
             }
 
             return res;
@@ -275,6 +296,8 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 response.Message = "Errores de Validación";
                 response.IsSuccess = false;
                 response.Errors = validation.Errors;
+                _logger.LogError(response.Message + " " + response.Errors + " " + nombre + " " + password);
+
             }
             else
             {
@@ -284,15 +307,18 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                     response.Data = _mapper.Map<UsuarioDomDTO, UsuarioDTO>(user);
                     response.IsSuccess = true;
                     response.Message = "Autenticación válida";
+                    _logger.LogInfo(response.Message + " " + nombre + " " + password);
                 }
                 catch(UsuarioNotFoundException  ex)
                 {
                     response.IsSuccess = true;
                     response.Message = ex.Message;
+                    _logger.LogError(response.Message + " " + nombre + " " + password);
                 }
                 catch(Exception ex)
                 {
                     response.Message = ex.Message;
+                    _logger.LogError(response.Message + " " + nombre + " " + password);
                     throw;
                 }
             }

@@ -7,6 +7,7 @@ using PruebaEjemploAPI_Backend.Aplicacion.DTO;
 using PruebaEjemploAPI_Backend.Dominio.DTO;
 using PruebaEjemploAPI_Backend.Transversal.Common;
 using PruebaEjemploAPI_Backend.Aplicacion.Validators;
+using k8s.KubeConfigModels;
 
 namespace PruebaEjemploAPI_Backend.Dominio.Services
 {
@@ -16,12 +17,14 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         private readonly IClienteDomService _clienteDomService;
         private readonly IMapper _mapper;
         private readonly ClienteValidator _clienteValidator;
+        private readonly IAppLogger<IClienteAppService> _logger;
 
-        public ClienteAppService(IClienteDomService clienteDomService, IMapper mapper, ClienteValidator clienteValidator)
+        public ClienteAppService(IClienteDomService clienteDomService, IMapper mapper, ClienteValidator clienteValidator, IAppLogger<IClienteAppService> logger)
         {
             _clienteDomService = clienteDomService;
             _mapper = mapper;
             _clienteValidator = clienteValidator;
+            _logger = logger;
         }
 
         public Response<bool> AddCliente(ClienteDTO cliente)
@@ -35,8 +38,8 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 res.IsSuccess = false;
                 res.Message = "Errores de Validación";
                 res.Errors = validation.Errors;
+                _logger.LogError(res.Message + " " + validation.Errors + " " + cliente.Nombre + " " + cliente.Apellidos);
             }
-
             try
             {                
                 var cli = _mapper.Map<ClienteDTO, ClienteDomDTO>(cliente);
@@ -46,6 +49,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Insertado con éxito";
+                    _logger.LogInfo(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
                 }
 
             }
@@ -53,6 +57,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
             }
 
             return res; 
@@ -69,6 +74,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 res.IsSuccess = false;
                 res.Message = "Errores de Validación";
                 res.Errors = validation.Errors;
+                _logger.LogError(res.Message + " " + validation.Errors + " " + cliente.Nombre + " " + cliente.Apellidos);
             }
 
             try
@@ -80,6 +86,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Insertado con éxito";
+                    _logger.LogInfo(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
                 }
 
             }
@@ -87,6 +94,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
             }
 
             return res;
@@ -103,6 +111,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Borrado con éxito";
+                    _logger.LogInfo(res.Message + " " + clienteId);
                 }
 
             }
@@ -110,6 +119,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + clienteId);
             }
 
             return res;
@@ -126,6 +136,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Borrado con éxito";
+                    _logger.LogInfo(res.Message + " " + clienteId);
                 }
 
             }
@@ -133,6 +144,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + clienteId);
             }
 
             return res;
@@ -149,6 +161,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Obtenido con éxito";
+                    _logger.LogInfo(res.Message + " " + clienteId);
                 }
 
             }
@@ -156,6 +169,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + clienteId);
             }
 
             return res;
@@ -172,6 +186,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Obtenido con éxito";
+                    _logger.LogInfo(res.Message + " " + clienteId);
                 }
 
             }
@@ -179,6 +194,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + clienteId);
             }
 
             return res;
@@ -195,6 +211,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Clientes Obtenidos con éxito";
+                    _logger.LogInfo(res.Message);
                 }
 
             }
@@ -202,6 +219,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message);
             }
 
             return res;
@@ -218,6 +236,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Clientes Obtenidos con éxito";
+                    _logger.LogInfo(res.Message);
                 }
 
             }
@@ -225,6 +244,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message);
             }
 
             return res;
@@ -241,6 +261,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 res.IsSuccess = false;
                 res.Message = "Errores de Validación";
                 res.Errors = validation.Errors;
+                _logger.LogError(res.Message + " " + res.Errors + " " + cliente.ClienteId);
             }
 
             try
@@ -252,6 +273,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Actualizado con éxito";
+                    _logger.LogInfo(res.Message + " " + cliente.ClienteId);
                 }
 
             }
@@ -259,6 +281,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + cliente.ClienteId);
             }
 
             return res;
@@ -275,6 +298,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 res.IsSuccess = false;
                 res.Message = "Errores de Validación";
                 res.Errors = validation.Errors;
+                _logger.LogError(res.Message + " " + res.Errors + " " + cliente.ClienteId);
             }
 
             try
@@ -286,6 +310,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
                 {
                     res.IsSuccess = true;
                     res.Message = "Cliente Actualizado con éxito";
+                    _logger.LogInfo(res.Message + " " + cliente.ClienteId);
                 }
 
             }
@@ -293,6 +318,7 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
             {
                 res.IsSuccess = false;
                 res.Message = ex.Message;
+                _logger.LogError(res.Message + " " + cliente.ClienteId);
             }
 
             return res;

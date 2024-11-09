@@ -19,6 +19,8 @@ using PruebaEjemploAPI_Backend.Transversal.Extensions.Versioning;
 using Asp.Versioning.ApiExplorer;
 using HealthChecks.UI.Client;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.HealthCheck;
+using PruebaEjemploAPI_Backend.Transversal.Extensions.WatchDogX;
+using WatchDog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +39,7 @@ builder.Services.Configure<AppSettings>(appSettingsTokenSection);
 builder.Services.AddAuthenticationServices(appSettingsTokenSection);
 builder.Services.AddValidator();
 builder.Services.AddHealthCheck(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
+builder.Services.AddWatchDog(builder.Configuration.GetConnectionString("DefaultWatchDogConnectionAzure"));
 
 var app = builder.Build();
 
@@ -52,6 +55,7 @@ app.UseSwaggerUI(c =>
     }
 });
 
+app.UseWatchDogExceptionLogger();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -64,6 +68,13 @@ app.MapHealthChecks("/health", new Microsoft.AspNetCore.Diagnostics.HealthChecks
 {
     Predicate = _ => true,
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+});
+var appSettingsWatchDogSection = builder.Configuration.GetSection("WatchDog");
+
+app.UseWatchDog(c =>
+{
+    c.WatchPageUsername = appSettingsWatchDogSection.GetValue<string>("WatchPageUsername");
+    c.WatchPagePassword = appSettingsWatchDogSection.GetValue<string>("WatchPagePassword");
 });
 
 app.Run();
