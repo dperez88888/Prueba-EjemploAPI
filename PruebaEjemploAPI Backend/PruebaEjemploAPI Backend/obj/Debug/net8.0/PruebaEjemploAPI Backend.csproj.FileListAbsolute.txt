@@ -346,3 +346,9 @@ D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bi
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Microsoft.Extensions.Caching.StackExchangeRedis.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\Pipelines.Sockets.Unofficial.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\StackExchange.Redis.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll

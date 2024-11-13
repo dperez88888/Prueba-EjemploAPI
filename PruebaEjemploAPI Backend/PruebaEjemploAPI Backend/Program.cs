@@ -21,6 +21,7 @@ using HealthChecks.UI.Client;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.HealthCheck;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.WatchDogX;
 using WatchDog;
+using PruebaEjemploAPI_Backend.Transversal.Extensions.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,7 @@ builder.Services.AddAuthenticationServices(appSettingsTokenSection);
 builder.Services.AddValidator();
 builder.Services.AddHealthCheck(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
 builder.Services.AddWatchDog(builder.Configuration.GetConnectionString("DefaultWatchDogConnectionAzure"));
+builder.Services.AddRedisCache(builder.Configuration.GetConnectionString("RedisConnectionAzure"));
 
 var app = builder.Build();
 

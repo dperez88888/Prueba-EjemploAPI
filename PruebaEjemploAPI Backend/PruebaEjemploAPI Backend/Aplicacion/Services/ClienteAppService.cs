@@ -8,6 +8,9 @@ using PruebaEjemploAPI_Backend.Dominio.DTO;
 using PruebaEjemploAPI_Backend.Transversal.Common;
 using PruebaEjemploAPI_Backend.Aplicacion.Validators;
 using k8s.KubeConfigModels;
+using Microsoft.Extensions.Caching.Distributed;
+using System.Text.Json;
+using System.Text;
 
 namespace PruebaEjemploAPI_Backend.Dominio.Services
 {
@@ -18,13 +21,15 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         private readonly IMapper _mapper;
         private readonly ClienteValidator _clienteValidator;
         private readonly IAppLogger<IClienteAppService> _logger;
+        private readonly IDistributedCache _distributedCache;
 
-        public ClienteAppService(IClienteDomService clienteDomService, IMapper mapper, ClienteValidator clienteValidator, IAppLogger<IClienteAppService> logger)
+        public ClienteAppService(IClienteDomService clienteDomService, IMapper mapper, ClienteValidator clienteValidator, IAppLogger<IClienteAppService> logger, IDistributedCache distributedCache)
         {
             _clienteDomService = clienteDomService;
             _mapper = mapper;
             _clienteValidator = clienteValidator;
             _logger = logger;
+            _distributedCache = distributedCache;
         }
 
         public Response<bool> AddCliente(ClienteDTO cliente)
@@ -203,10 +208,29 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         public Response<List<ClienteDTO>> GetClientes()
         {
             var res = new Response<List<ClienteDTO>>();
+            var cacheKey = "clientesList";
 
             try
-            {                
-                res.Data = _mapper.Map<List<ClienteDomDTO>, List<ClienteDTO>>(_clienteDomService.GetClientes());
+            {      
+                var redisClientes = _distributedCache.Get(cacheKey);
+                if (redisClientes != null)
+                {
+                    res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
+                }
+                else
+                {                    
+                    res.Data = _mapper.Map<List<ClienteDomDTO>, List<ClienteDTO>>(_clienteDomService.GetClientes());
+                    if (res.Data != null)
+                    {
+                        var serializedClientes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(res.Data));
+                        var opt = new DistributedCacheEntryOptions()
+                            .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
+                            .SetSlidingExpiration(TimeSpan.FromMinutes(60));
+
+                        _distributedCache.Set(cacheKey, serializedClientes, opt);
+                    }
+                }
+                
                 if (res.Data != null)
                 {
                     res.IsSuccess = true;
@@ -228,10 +252,30 @@ namespace PruebaEjemploAPI_Backend.Dominio.Services
         public async Task<Response<List<ClienteDTO>>> GetClientesAsync()
         {
             var res = new Response<List<ClienteDTO>>();
+            var cacheKey = "clientesList";
 
             try
             {
-                res.Data = _mapper.Map<List<ClienteDomDTO>, List<ClienteDTO>>(await _clienteDomService.GetClientesAsync());
+                var redisClientes = await _distributedCache.GetAsync(cacheKey);
+                if (redisClientes != null)
+                {
+                    res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
+                }
+                else
+                {
+                    res.Data = _mapper.Map<List<ClienteDomDTO>, List<ClienteDTO>>(await _clienteDomService.GetClientesAsync());
+
+                    if (res.Data != null)
+                    {
+                        var serializedClientes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(res.Data));
+                        var opt = new DistributedCacheEntryOptions()
+                            .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
+                            .SetSlidingExpiration(TimeSpan.FromMinutes(60));
+
+                        await _distributedCache.SetAsync(cacheKey, serializedClientes, opt);
+                    }
+                }
+
                 if (res.Data != null)
                 {
                     res.IsSuccess = true;
