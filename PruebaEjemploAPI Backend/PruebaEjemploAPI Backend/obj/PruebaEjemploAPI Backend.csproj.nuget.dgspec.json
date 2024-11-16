@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[8.1.0, )"
             },
+            "AspNetCore.HealthChecks.Redis": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
             "AspNetCore.HealthChecks.SqlServer": {
               "target": "Package",
               "version": "[8.0.2, )"

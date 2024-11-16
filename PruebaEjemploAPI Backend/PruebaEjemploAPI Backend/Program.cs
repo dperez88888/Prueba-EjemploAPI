@@ -39,7 +39,7 @@ var appSettingsTokenSection = builder.Configuration.GetSection("ConfigToken");
 builder.Services.Configure<AppSettings>(appSettingsTokenSection);
 builder.Services.AddAuthenticationServices(appSettingsTokenSection);
 builder.Services.AddValidator();
-builder.Services.AddHealthCheck(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
+builder.Services.AddHealthCheck(builder.Configuration.GetConnectionString("DefaultConnectionAzure"), builder.Configuration.GetConnectionString("RedisConnectionAzure"));
 builder.Services.AddWatchDog(builder.Configuration.GetConnectionString("DefaultWatchDogConnectionAzure"));
 builder.Services.AddRedisCache(builder.Configuration.GetConnectionString("RedisConnectionAzure"));
 
@@ -59,9 +59,12 @@ app.UseSwaggerUI(c =>
 
 app.UseWatchDogExceptionLogger();
 app.UseHttpsRedirection();
+app.UseRouting();
 
 app.UseAuthorization();
 app.UseAuthentication();
+
+app.UseEndpoints(_ => { });
 
 app.MapControllers();
 
