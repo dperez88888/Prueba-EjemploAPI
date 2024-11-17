@@ -1,6 +1,6 @@
 ﻿namespace PruebaEjemploAPI_Backend.Transversal.Settings
 {
-    public class AppSettings
+    public class AppTokenSettings
     {
 
         public string Secret { get; set; }

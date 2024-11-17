@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "lOTTmMeVArLmgDfi9DrWD90WEm3kPF93BbjLTIpTWWV9SR3BaT+/7B03ZQpE98/6p1/yv9q1ZleBOxVvf8OK8g==",
+  "dgSpecHash": "aR9d66x41jDxv7uU/AA1hdIN7xbzGMC8sy2DbfCg/xz3zD1zxUBGegPw7xbDVpLaOQRx5DRGxZava0pVXhSO+A==",
   "success": true,
   "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI Backend\\PruebaEjemploAPI Backend.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\David\\.nuget\\packages\\asp.versioning.http\\8.1.0\\asp.versioning.http.8.1.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\asp.versioning.mvc\\8.1.0\\asp.versioning.mvc.8.1.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\8.1.0\\asp.versioning.mvc.apiexplorer.8.1.0.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\aspnetcore.healthchecks.redis\\8.0.1\\aspnetcore.healthchecks.redis.8.0.1.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\aspnetcore.healthchecks.sqlserver\\8.0.2\\aspnetcore.healthchecks.sqlserver.8.0.2.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\aspnetcore.healthchecks.ui\\8.0.2\\aspnetcore.healthchecks.ui.8.0.2.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\aspnetcore.healthchecks.ui.client\\8.0.1\\aspnetcore.healthchecks.ui.client.8.0.1.nupkg.sha512",

@@ -1,6 +1,7 @@
 ﻿using Asp.Versioning;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.Extensions.Options;
 using PruebaEjemploAPI_Backend.Aplicacion.DTO;
 using PruebaEjemploAPI_Backend.Dominio.Services;
@@ -9,6 +10,7 @@ using PruebaEjemploAPI_Backend.Transversal.Settings;
 namespace PruebaEjemploAPI_Backend.Servicios.Controllers.v2
 {
     [Authorize]
+    [EnableRateLimiting("fixedWindow")]
     [Route("PruebaEjemploAPI/[controller]")]
     [ApiController]
     [ApiVersion("2.0")]

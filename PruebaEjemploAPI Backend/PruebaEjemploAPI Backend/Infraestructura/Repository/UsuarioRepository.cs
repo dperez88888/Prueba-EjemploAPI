@@ -15,12 +15,12 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
     public class UsuarioRepository : IUsuarioRepository
     {
         private readonly IContextDB _contextDB;
-        private readonly AppSettings _appSettings;
+        private readonly AppTokenSettings _appTokenSettings;
 
-        public UsuarioRepository(IContextDB contextDB, IOptions<AppSettings> appSettings)
+        public UsuarioRepository(IContextDB contextDB, IOptions<AppTokenSettings> appTokenSettings)
         {
             _contextDB = contextDB;
-            _appSettings = appSettings.Value;
+            _appTokenSettings = appTokenSettings.Value;
         }
          
         bool IUsuarioRepository.AddUsuario(Usuario usuario)
@@ -130,7 +130,7 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
         private string BuildToken(string userId)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(_appSettings.Secret);
+            var key = Encoding.ASCII.GetBytes(_appTokenSettings.Secret);
             var tokenDescr = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
@@ -139,8 +139,8 @@ namespace PruebaEjemploAPI_Backend.Infraestructura.Repository
                 }),
                 Expires = DateTime.UtcNow.AddMinutes(30),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
-                Issuer = _appSettings.Issuer,
-                Audience = _appSettings.Audience
+                Issuer = _appTokenSettings.Issuer,
+                Audience = _appTokenSettings.Audience
             };
             var token = tokenHandler.CreateToken(tokenDescr);
             var tokenString = tokenHandler.WriteToken(token);

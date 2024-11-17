@@ -9,9 +9,9 @@ namespace PruebaEjemploAPI_Backend.Transversal.Extensions.Authentication
     {
         public static IServiceCollection AddAuthenticationServices(this IServiceCollection services, IConfigurationSection configurationSection)
         {
-            var key = Encoding.ASCII.GetBytes(configurationSection.Get<AppSettings>().Secret);
-            var issuer = configurationSection.Get<AppSettings>().Issuer;
-            var audience = configurationSection.Get<AppSettings>().Audience;
+            var key = Encoding.ASCII.GetBytes(configurationSection.Get<AppTokenSettings>().Secret);
+            var issuer = configurationSection.Get<AppTokenSettings>().Issuer;
+            var audience = configurationSection.Get<AppTokenSettings>().Audience;
 
             services.AddAuthentication(x =>
             {

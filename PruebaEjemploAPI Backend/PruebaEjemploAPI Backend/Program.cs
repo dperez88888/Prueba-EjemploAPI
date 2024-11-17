@@ -22,6 +22,7 @@ using PruebaEjemploAPI_Backend.Transversal.Extensions.HealthCheck;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.WatchDogX;
 using WatchDog;
 using PruebaEjemploAPI_Backend.Transversal.Extensions.Redis;
+using PruebaEjemploAPI_Backend.Transversal.Extensions.RateLimiter;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,13 +36,19 @@ builder.Services.AddSwagger();
 builder.Services.AddDatabaseConf(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
 builder.Services.AddMappingServices();
 builder.Services.AddMapper();
+
 var appSettingsTokenSection = builder.Configuration.GetSection("ConfigToken");
-builder.Services.Configure<AppSettings>(appSettingsTokenSection);
+builder.Services.Configure<AppTokenSettings>(appSettingsTokenSection);
 builder.Services.AddAuthenticationServices(appSettingsTokenSection);
+
 builder.Services.AddValidator();
 builder.Services.AddHealthCheck(builder.Configuration.GetConnectionString("DefaultConnectionAzure"), builder.Configuration.GetConnectionString("RedisConnectionAzure"));
 builder.Services.AddWatchDog(builder.Configuration.GetConnectionString("DefaultWatchDogConnectionAzure"));
 builder.Services.AddRedisCache(builder.Configuration.GetConnectionString("RedisConnectionAzure"));
+
+var appSettingsRateLimiting = builder.Configuration.GetSection("RateLimiting");
+builder.Services.Configure<AppRateLimitingSettings>(appSettingsRateLimiting);
+builder.Services.AddRateLimiting(appSettingsRateLimiting);
 
 var app = builder.Build();
 
@@ -64,6 +71,7 @@ app.UseRouting();
 app.UseAuthorization();
 app.UseAuthentication();
 
+app.UseRateLimiter();
 app.UseEndpoints(_ => { });
 
 app.MapControllers();
