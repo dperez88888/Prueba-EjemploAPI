@@ -1,3 +1,16 @@
 {
-  "PruebaEjemploAPI Backend, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI Backend"
+  "PruebaEjemploAPI Backend": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI Backend",
+  "PruebaEjemploAPI.Application.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Common",
+  "PruebaEjemploAPI.Application.DTO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.DTO",
+  "PruebaEjemploAPI.Application.Extensions": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Extensions",
+  "PruebaEjemploAPI.Application.Interface, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Interface",
+  "PruebaEjemploAPI.Application.UseCases, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases",
+  "PruebaEjemploAPI.Application.Validators, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Validators",
+  "PruebaEjemploAPI.Domain.Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Domain.Entity",
+  "PruebaEjemploAPI.Persistence, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Persistence",
+  "PruebaEjemploAPI.Persistence.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Persistence.Extensions",
+  "PruebaEjemploAPI.Service.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Service.Extensions",
+  "PruebaEjemploAPI.Transversal.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Transversal.Common",
+  "PruebaEjemploAPI.Transversal.Exceptions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Transversal.Exceptions",
+  "PruebaEjemploAPI.Transversal.Extensions, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Transversal.Extensions"
 }

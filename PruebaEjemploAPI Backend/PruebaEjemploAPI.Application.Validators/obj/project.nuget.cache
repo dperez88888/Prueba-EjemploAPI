@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "igyZdpWB/qoX1TL3CNQnwPQShngd1wuGAxX6b7+SLAljPt33mUCg8lALE55ugK34/E5GtuTq/9CoAc/cQiBujA==",
+  "success": true,
+  "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Validators\\PruebaEjemploAPI.Application.Validators.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\David\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.11.0\\fluentvalidation.dependencyinjectionextensions.11.11.0.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\2.1.0\\microsoft.extensions.dependencyinjection.abstractions.2.1.0.nupkg.sha512"
+  ],
+  "logs": []
+}

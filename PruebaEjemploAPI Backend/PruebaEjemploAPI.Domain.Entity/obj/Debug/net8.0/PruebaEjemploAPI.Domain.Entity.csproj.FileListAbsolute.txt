@@ -1,0 +1,12 @@
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\bin\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.deps.json
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\bin\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\bin\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.AssemblyInfoInputs.cache
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.AssemblyInfo.cs
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.csproj.CoreCompileInputs.cache
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.sourcelink.json
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\refint\PruebaEjemploAPI.Domain.Entity.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\PruebaEjemploAPI.Domain.Entity.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Domain.Entity\obj\Debug\net8.0\ref\PruebaEjemploAPI.Domain.Entity.dll

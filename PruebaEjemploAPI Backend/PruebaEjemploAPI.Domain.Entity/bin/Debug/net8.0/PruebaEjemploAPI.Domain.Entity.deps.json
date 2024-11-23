@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PruebaEjemploAPI.Domain.Entity/1.0.0": {
+        "runtime": {
+          "PruebaEjemploAPI.Domain.Entity.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PruebaEjemploAPI.Domain.Entity/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

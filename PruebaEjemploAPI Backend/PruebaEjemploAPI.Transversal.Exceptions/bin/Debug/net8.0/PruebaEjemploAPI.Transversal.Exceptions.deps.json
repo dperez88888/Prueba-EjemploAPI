@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "PruebaEjemploAPI.Transversal.Exceptions/1.0.0": {
+        "runtime": {
+          "PruebaEjemploAPI.Transversal.Exceptions.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PruebaEjemploAPI.Transversal.Exceptions/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

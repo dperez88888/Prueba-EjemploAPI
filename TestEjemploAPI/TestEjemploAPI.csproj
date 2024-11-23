@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -16,11 +16,13 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
     <PackageReference Include="MSTest.TestAdapter" Version="3.6.1" />
     <PackageReference Include="MSTest.TestFramework" Version="3.6.1" />
-    <PackageReference Include="System.Text.Json" Version="8.0.5" />
+    <PackageReference Include="System.Text.Json" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI Backend\PruebaEjemploAPI.Persistence.Extensions\PruebaEjemploAPI.Persistence.Extensions.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Extensions\PruebaEjemploAPI.Transversal.Extensions.csproj" />
   </ItemGroup>
 
   <ItemGroup>

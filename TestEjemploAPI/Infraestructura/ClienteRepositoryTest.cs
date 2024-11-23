@@ -4,12 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting.Internal;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using PruebaEjemploAPI_Backend.Infraestructura.Model;
-using PruebaEjemploAPI_Backend.Infraestructura.Repository;
-using PruebaEjemploAPI_Backend.Transversal.Extensions.DB;
-using PruebaEjemploAPI_Backend.Transversal.Extensions.MappingServices;
-using System.Globalization;
-using System.Runtime.CompilerServices;
+using PruebaEjemploAPI.Application.Interface.Persistence;
+using PruebaEjemploAPI.Domain.Entity;
+using PruebaEjemploAPI.Persistence.Extensions.DB;
+using PruebaEjemploAPI.Transversal.Extensions.MappingServices;
 
 namespace TestEjemploAPI.Infraestructura
 {

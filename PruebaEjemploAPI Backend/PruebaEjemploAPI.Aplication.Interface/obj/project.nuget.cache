@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Jl6eKAYry8wGsgoBqpLDN6qOEu2ucI2Sa3u3t9OJENDkImvR+1GTkVkT18OQZqYNWH8XqSVJ7NKjvUGMNv0Rzw==",
+  "success": true,
+  "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Aplication.Interface\\PruebaEjemploAPI.Application.Interface.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\David\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512"
+  ],
+  "logs": []
+}

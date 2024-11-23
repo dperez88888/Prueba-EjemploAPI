@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WatchDog.NET" Version="1.4.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PruebaEjemploAPI.Application.Interface\PruebaEjemploAPI.Application.Interface.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI.Application.UseCases\PruebaEjemploAPI.Application.UseCases.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI.Application.Validators\PruebaEjemploAPI.Application.Validators.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI.Persistence\PruebaEjemploAPI.Persistence.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI.Transversal.Common\PruebaEjemploAPI.Transversal.Common.csproj" />
+  </ItemGroup>
+
+</Project>

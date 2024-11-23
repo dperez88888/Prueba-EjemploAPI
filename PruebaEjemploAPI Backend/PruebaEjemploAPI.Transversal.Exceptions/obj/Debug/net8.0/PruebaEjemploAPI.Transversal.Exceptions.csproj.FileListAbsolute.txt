@@ -1,0 +1,12 @@
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.deps.json
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.AssemblyInfoInputs.cache
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.AssemblyInfo.cs
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.csproj.CoreCompileInputs.cache
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.sourcelink.json
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\refint\PruebaEjemploAPI.Transversal.Exceptions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Transversal.Exceptions\obj\Debug\net8.0\ref\PruebaEjemploAPI.Transversal.Exceptions.dll
