@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.Logging;
-using PruebaEjemploAPI.Transversal.Common;
+﻿
+using Microsoft.Extensions.Logging;
 using WatchDog;
 
-namespace PruebaEjemploAPI.Transversal.Logging
+namespace PruebaEjemploAPI.Transversal.Common.Logging
 {
     public class LoggerAdapter<T> : IAppLogger<T> where T : class
     {

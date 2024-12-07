@@ -14,6 +14,9 @@ using PruebaEjemploAPI.Persistence.Extensions.WatchDogX;
 using PruebaEjemploAPI.Persistence.Extensions.Redis;
 using PruebaEjemploAPI.Application.Extensions.RateLimiter;
 using PruebaEjemploAPI.Transversal.Common.Settings;
+using PruebaEjemploAPI.Application.Extensions.Middleware;
+using PruebaEjemploAPI.Persistence.Extensions.Injection;
+using PruebaEjemploAPI.Application.Extensions.Injection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +29,8 @@ builder.Services.AddSwagger();
 
 builder.Services.AddDatabaseConf(builder.Configuration.GetConnectionString("DefaultConnectionAzure"));
 builder.Services.AddMappingServices();
+builder.Services.AddPersistenceInjection();
+builder.Services.AddApplicationInjection();
 builder.Services.AddMapper();
 
 var appSettingsTokenSection = builder.Configuration.GetSection("ConfigToken");
@@ -80,6 +85,8 @@ app.UseWatchDog(c =>
     c.WatchPageUsername = appSettingsWatchDogSection.GetValue<string>("WatchPageUsername");
     c.WatchPagePassword = appSettingsWatchDogSection.GetValue<string>("WatchPagePassword");
 });
+
+app.AddCustomMiddleware();
 
 app.Run();
 public partial class Program { } // esta clase se crea parcial para que se haga pública y pueda ser accesible desde la clase de test

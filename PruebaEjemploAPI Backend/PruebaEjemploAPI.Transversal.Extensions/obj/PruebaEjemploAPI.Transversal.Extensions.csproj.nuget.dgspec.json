@@ -520,6 +520,14 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.11.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "WatchDog.NET": {
+              "target": "Package",
+              "version": "[1.4.11, )"
             }
           },
           "imports": [
@@ -664,12 +672,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "WatchDog.NET": {
-              "target": "Package",
-              "version": "[1.4.11, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

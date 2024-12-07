@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="WatchDog.NET" Version="1.4.11" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\PruebaEjemploAPI.Application.Interface\PruebaEjemploAPI.Application.Interface.csproj" />
     <ProjectReference Include="..\PruebaEjemploAPI.Application.UseCases\PruebaEjemploAPI.Application.UseCases.csproj" />
     <ProjectReference Include="..\PruebaEjemploAPI.Application.Validators\PruebaEjemploAPI.Application.Validators.csproj" />

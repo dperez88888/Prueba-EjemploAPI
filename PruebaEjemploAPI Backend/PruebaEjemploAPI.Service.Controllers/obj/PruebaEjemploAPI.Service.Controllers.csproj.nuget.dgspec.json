@@ -337,6 +337,14 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.11.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "WatchDog.NET": {
+              "target": "Package",
+              "version": "[1.4.11, )"
             }
           },
           "imports": [

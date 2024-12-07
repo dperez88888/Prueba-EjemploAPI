@@ -41,9 +41,10 @@ namespace PruebaEjemploAPI.Application.UseCases
                 res.Message = "Errores de Validación";
                 res.Errors = validation.Errors;
                 _logger.LogError(res.Message + " " + validation.Errors + " " + cliente.Nombre + " " + cliente.Apellidos);
+
             }
-            try
-            {                
+            else
+            {
                 var cli = _mapper.Map<ClienteDTO, Cliente>(cliente);
 
                 res.Data = _unitOfWork.ClienteRepository.AddCliente(cli);
@@ -53,13 +54,6 @@ namespace PruebaEjemploAPI.Application.UseCases
                     res.Message = "Cliente Insertado con éxito";
                     _logger.LogInfo(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
                 }
-
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
             }
 
             return res; 
@@ -78,8 +72,7 @@ namespace PruebaEjemploAPI.Application.UseCases
                 res.Errors = validation.Errors;
                 _logger.LogError(res.Message + " " + validation.Errors + " " + cliente.Nombre + " " + cliente.Apellidos);
             }
-
-            try
+            else
             {
                 var cli = _mapper.Map<ClienteDTO, Cliente>(cliente);
 
@@ -90,14 +83,7 @@ namespace PruebaEjemploAPI.Application.UseCases
                     res.Message = "Cliente Insertado con éxito";
                     _logger.LogInfo(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
                 }
-
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + cliente.Nombre + " " + cliente.Apellidos);
-            }
+            }            
 
             return res;
         }
@@ -105,23 +91,13 @@ namespace PruebaEjemploAPI.Application.UseCases
         public Response<bool> DeleteCliente(int clienteId)
         {
             var res = new Response<bool>();
-
-            try
-            {                
-                res.Data = _unitOfWork.ClienteRepository.DeleteCliente(clienteId);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Cliente Borrado con éxito";
-                    _logger.LogInfo(res.Message + " " + clienteId);
-                }
-
-            }
-            catch (Exception ex)
+                                      
+            res.Data = _unitOfWork.ClienteRepository.DeleteCliente(clienteId);
+            if (res.Data)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + clienteId);
+                res.IsSuccess = true;
+                res.Message = "Cliente Borrado con éxito";
+                _logger.LogInfo(res.Message + " " + clienteId);
             }
 
             return res;
@@ -130,23 +106,13 @@ namespace PruebaEjemploAPI.Application.UseCases
         public async Task<Response<bool>> DeleteClienteAsync(int clienteId)
         {
             var res = new Response<bool>();
-
-            try
+            
+            res.Data = await _unitOfWork.ClienteRepository.DeleteClienteAsync(clienteId);
+            if (res.Data)
             {
-                res.Data = await _unitOfWork.ClienteRepository.DeleteClienteAsync(clienteId);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Cliente Borrado con éxito";
-                    _logger.LogInfo(res.Message + " " + clienteId);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + clienteId);
+                res.IsSuccess = true;
+                res.Message = "Cliente Borrado con éxito";
+                _logger.LogInfo(res.Message + " " + clienteId);
             }
 
             return res;
@@ -155,23 +121,13 @@ namespace PruebaEjemploAPI.Application.UseCases
         public Response<ClienteDTO> GetCliente(int clienteId)
         {
             var res = new Response<ClienteDTO>();
-
-            try
-            {                
-                res.Data = _mapper.Map<Cliente, ClienteDTO> (_unitOfWork.ClienteRepository.GetCliente(clienteId));
-                if (res.Data != null)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Cliente Obtenido con éxito";
-                    _logger.LogInfo(res.Message + " " + clienteId);
-                }
-
-            }
-            catch (Exception ex)
+                                      
+            res.Data = _mapper.Map<Cliente, ClienteDTO> (_unitOfWork.ClienteRepository.GetCliente(clienteId));
+            if (res.Data != null)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + clienteId);
+                res.IsSuccess = true;
+                res.Message = "Cliente Obtenido con éxito";
+                _logger.LogInfo(res.Message + " " + clienteId);
             }
 
             return res;
@@ -180,24 +136,14 @@ namespace PruebaEjemploAPI.Application.UseCases
         public async Task<Response<ClienteDTO>> GetClienteAsync(int clienteId)
         {
             var res = new Response<ClienteDTO>();
-
-            try
+                        
+            res.Data = _mapper.Map<Cliente, ClienteDTO>(await _unitOfWork.ClienteRepository.GetClienteAsync(clienteId));
+            if (res.Data != null)
             {
-                res.Data = _mapper.Map<Cliente, ClienteDTO>(await _unitOfWork.ClienteRepository.GetClienteAsync(clienteId));
-                if (res.Data != null)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Cliente Obtenido con éxito";
-                    _logger.LogInfo(res.Message + " " + clienteId);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + clienteId);
-            }
+                res.IsSuccess = true;
+                res.Message = "Cliente Obtenido con éxito";
+                _logger.LogInfo(res.Message + " " + clienteId);
+            }            
 
             return res;
         }
@@ -206,43 +152,33 @@ namespace PruebaEjemploAPI.Application.UseCases
         {
             var res = new Response<List<ClienteDTO>>();
             var cacheKey = "clientesList";
-
-            try
-            {      
-                var redisClientes = _distributedCache.Get(cacheKey);
-                if (redisClientes != null)
-                {
-                    res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
-                }
-                else
-                {                    
-                    res.Data = _mapper.Map<List<Cliente>, List<ClienteDTO>>(_unitOfWork.ClienteRepository.GetClientes());
-                    if (res.Data != null)
-                    {
-                        var serializedClientes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(res.Data));
-                        var opt = new DistributedCacheEntryOptions()
-                            .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
-                            .SetSlidingExpiration(TimeSpan.FromMinutes(60));
-
-                        _distributedCache.Set(cacheKey, serializedClientes, opt);
-                    }
-                }
-                
+                           
+            var redisClientes = _distributedCache.Get(cacheKey);
+            if (redisClientes != null)
+            {
+                res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
+            }
+            else
+            {                    
+                res.Data = _mapper.Map<List<Cliente>, List<ClienteDTO>>(_unitOfWork.ClienteRepository.GetClientes());
                 if (res.Data != null)
                 {
-                    res.IsSuccess = true;
-                    res.Message = "Clientes Obtenidos con éxito";
-                    _logger.LogInfo(res.Message);
+                    var serializedClientes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(res.Data));
+                    var opt = new DistributedCacheEntryOptions()
+                        .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
+                        .SetSlidingExpiration(TimeSpan.FromMinutes(60));
+
+                    _distributedCache.Set(cacheKey, serializedClientes, opt);
                 }
-
             }
-            catch (Exception ex)
+                
+            if (res.Data != null)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message);
+                res.IsSuccess = true;
+                res.Message = "Clientes Obtenidos con éxito";
+                _logger.LogInfo(res.Message);
             }
-
+            
             return res;
         }
 
@@ -250,44 +186,34 @@ namespace PruebaEjemploAPI.Application.UseCases
         {
             var res = new Response<List<ClienteDTO>>();
             var cacheKey = "clientesList";
-
-            try
+                        
+            var redisClientes = await _distributedCache.GetAsync(cacheKey);
+            if (redisClientes != null)
             {
-                var redisClientes = await _distributedCache.GetAsync(cacheKey);
-                if (redisClientes != null)
-                {
-                    res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
-                }
-                else
-                {
-                    res.Data = _mapper.Map<List<Cliente>, List<ClienteDTO>>(await _unitOfWork.ClienteRepository.GetClientesAsync());
-
-                    if (res.Data != null)
-                    {
-                        var serializedClientes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(res.Data));
-                        var opt = new DistributedCacheEntryOptions()
-                            .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
-                            .SetSlidingExpiration(TimeSpan.FromMinutes(60));
-
-                        await _distributedCache.SetAsync(cacheKey, serializedClientes, opt);
-                    }
-                }
+                res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
+            }
+            else
+            {
+                res.Data = _mapper.Map<List<Cliente>, List<ClienteDTO>>(await _unitOfWork.ClienteRepository.GetClientesAsync());
 
                 if (res.Data != null)
                 {
-                    res.IsSuccess = true;
-                    res.Message = "Clientes Obtenidos con éxito";
-                    _logger.LogInfo(res.Message);
+                    var serializedClientes = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(res.Data));
+                    var opt = new DistributedCacheEntryOptions()
+                        .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
+                        .SetSlidingExpiration(TimeSpan.FromMinutes(60));
+
+                    await _distributedCache.SetAsync(cacheKey, serializedClientes, opt);
                 }
-
             }
-            catch (Exception ex)
+
+            if (res.Data != null)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message);
+                res.IsSuccess = true;
+                res.Message = "Clientes Obtenidos con éxito";
+                _logger.LogInfo(res.Message);
             }
-
+            
             return res;
         }
 
@@ -304,8 +230,7 @@ namespace PruebaEjemploAPI.Application.UseCases
                 res.Errors = validation.Errors;
                 _logger.LogError(res.Message + " " + res.Errors + " " + cliente.ClienteId);
             }
-
-            try
+            else
             {
                 var cli = _mapper.Map<ClienteDTO, Cliente>(cliente);
 
@@ -317,13 +242,7 @@ namespace PruebaEjemploAPI.Application.UseCases
                     _logger.LogInfo(res.Message + " " + cliente.ClienteId);
                 }
 
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + cliente.ClienteId);
-            }
+            }            
 
             return res;
         }
@@ -341,8 +260,7 @@ namespace PruebaEjemploAPI.Application.UseCases
                 res.Errors = validation.Errors;
                 _logger.LogError(res.Message + " " + res.Errors + " " + cliente.ClienteId);
             }
-
-            try
+            else
             {
                 var cli = _mapper.Map<ClienteDTO, Cliente>(cliente);
 
@@ -354,13 +272,7 @@ namespace PruebaEjemploAPI.Application.UseCases
                     _logger.LogInfo(res.Message + " " + cliente.ClienteId);
                 }
 
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + cliente.ClienteId);
-            }
+            }            
 
             return res;
         }

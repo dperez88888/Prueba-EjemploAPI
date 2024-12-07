@@ -2772,8 +2772,10 @@
       "PruebaEjemploAPI.Transversal.Common/1.0.0": {
         "dependencies": {
           "FluentValidation": "11.11.0",
+          "Microsoft.Extensions.Logging": "9.0.0",
           "PruebaEjemploAPI.Application.DTO": "1.0.0",
-          "PruebaEjemploAPI.Domain.Entity": "1.0.0"
+          "PruebaEjemploAPI.Domain.Entity": "1.0.0",
+          "WatchDog.NET": "1.4.11"
         },
         "runtime": {
           "PruebaEjemploAPI.Transversal.Common.dll": {}

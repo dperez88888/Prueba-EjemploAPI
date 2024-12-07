@@ -28,25 +28,15 @@ namespace PruebaEjemploAPI.Application.UseCases
         public Response<bool> AddUsuario(UsuarioDTO usuario)
         {
             var res = new Response<bool>();
+                                     
+            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
 
-            try
-            {                
-                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
-
-                res.Data = _unitOfWork.UsuarioRepository.AddUsuario(usr);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Insertado con éxito";
-                    _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
-                }
-
-            }
-            catch (Exception ex)
+            res.Data = _unitOfWork.UsuarioRepository.AddUsuario(usr);
+            if (res.Data)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuario.Nombre + " " + usuario.Apellidos);
+                res.IsSuccess = true;
+                res.Message = "Usuario Insertado con éxito";
+                _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
             }
 
             return res; 
@@ -55,25 +45,15 @@ namespace PruebaEjemploAPI.Application.UseCases
         public async Task<Response<bool>> AddUsuarioAsync(UsuarioDTO usuario)
         {
             var res = new Response<bool>();
+                        
+            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
 
-            try
+            res.Data = await _unitOfWork.UsuarioRepository.AddUsuarioAsync(usr);
+            if (res.Data)
             {
-                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
-
-                res.Data = await _unitOfWork.UsuarioRepository.AddUsuarioAsync(usr);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Insertado con éxito";
-                    _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuario.Nombre + " " + usuario.Apellidos);
+                res.IsSuccess = true;
+                res.Message = "Usuario Insertado con éxito";
+                _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
             }
 
             return res;
@@ -82,23 +62,13 @@ namespace PruebaEjemploAPI.Application.UseCases
         public Response<bool> DeleteUsuario(int usuarioId)
         {
             var res = new Response<bool>();
-
-            try
-            {                
-                res.Data = _unitOfWork.UsuarioRepository.DeleteUsuario(usuarioId);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Borrado con éxito";
-                    _logger.LogInfo(res.Message + " " + usuarioId);
-                }
-
-            }
-            catch (Exception ex)
+                                      
+            res.Data = _unitOfWork.UsuarioRepository.DeleteUsuario(usuarioId);
+            if (res.Data)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuarioId);
+                res.IsSuccess = true;
+                res.Message = "Usuario Borrado con éxito";
+                _logger.LogInfo(res.Message + " " + usuarioId);
             }
 
             return res;
@@ -107,23 +77,13 @@ namespace PruebaEjemploAPI.Application.UseCases
         public async Task<Response<bool>> DeleteUsuarioAsync(int usuarioId)
         {
             var res = new Response<bool>();
-
-            try
+                        
+            res.Data = await _unitOfWork.UsuarioRepository.DeleteUsuarioAsync(usuarioId);
+            if (res.Data)
             {
-                res.Data = await _unitOfWork.UsuarioRepository.DeleteUsuarioAsync(usuarioId);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Borrado con éxito";
-                    _logger.LogInfo(res.Message + " " + usuarioId);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuarioId);
+                res.IsSuccess = true;
+                res.Message = "Usuario Borrado con éxito";
+                _logger.LogInfo(res.Message + " " + usuarioId);
             }
 
             return res;
@@ -132,73 +92,43 @@ namespace PruebaEjemploAPI.Application.UseCases
         public Response<UsuarioDTO> GetUsuario(int usuarioId)
         {
             var res = new Response<UsuarioDTO>();
-
-            try
-            {                
-                res.Data = _mapper.Map<Usuario, UsuarioDTO> (_unitOfWork.UsuarioRepository.GetUsuario(usuarioId));
-                if (res.Data != null)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Obtenido con éxito";
-                    _logger.LogInfo(res.Message + " " + usuarioId);
-                }
-
-            }
-            catch (Exception ex)
+                                     
+            res.Data = _mapper.Map<Usuario, UsuarioDTO> (_unitOfWork.UsuarioRepository.GetUsuario(usuarioId));
+            if (res.Data != null)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuarioId);
+                res.IsSuccess = true;
+                res.Message = "Usuario Obtenido con éxito";
+                _logger.LogInfo(res.Message + " " + usuarioId);
             }
-
+            
             return res;
         }
 
         public async Task<Response<UsuarioDTO>> GetUsuarioAsync(int usuarioId)
         {
             var res = new Response<UsuarioDTO>();
-
-            try
+                        
+            res.Data = _mapper.Map<Usuario, UsuarioDTO>(await _unitOfWork.UsuarioRepository.GetUsuarioAsync(usuarioId));
+            if (res.Data != null)
             {
-                res.Data = _mapper.Map<Usuario, UsuarioDTO>(await _unitOfWork.UsuarioRepository.GetUsuarioAsync(usuarioId));
-                if (res.Data != null)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Obtenido con éxito";
-                    _logger.LogInfo(res.Message + " " + usuarioId);
-                }
-
+                res.IsSuccess = true;
+                res.Message = "Usuario Obtenido con éxito";
+                _logger.LogInfo(res.Message + " " + usuarioId);
             }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuarioId);
-            }
-
+            
             return res;
         }
 
         public Response<List<UsuarioDTO>> GetUsuarios()
         {
             var res = new Response<List<UsuarioDTO>>();
-
-            try
-            {                
-                res.Data = _mapper.Map<List<Usuario>, List<UsuarioDTO>>(_unitOfWork.UsuarioRepository.GetUsuarios());
-                if (res.Data != null)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuarios Obtenidos con éxito";
-                    _logger.LogInfo(res.Message);
-                }
-
-            }
-            catch (Exception ex)
+             
+            res.Data = _mapper.Map<List<Usuario>, List<UsuarioDTO>>(_unitOfWork.UsuarioRepository.GetUsuarios());
+            if (res.Data != null)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message);
+                res.IsSuccess = true;
+                res.Message = "Usuarios Obtenidos con éxito";
+                _logger.LogInfo(res.Message);
             }
 
             return res;
@@ -208,51 +138,31 @@ namespace PruebaEjemploAPI.Application.UseCases
         {
             var res = new Response<List<UsuarioDTO>>();
 
-            try
+            res.Data = _mapper.Map<List<Usuario>, List<UsuarioDTO>>(await _unitOfWork.UsuarioRepository.GetUsuariosAsync());
+            if (res.Data != null)
             {
-                res.Data = _mapper.Map<List<Usuario>, List<UsuarioDTO>>(await _unitOfWork.UsuarioRepository.GetUsuariosAsync());
-                if (res.Data != null)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuarios Obtenidos con éxito";
-                    _logger.LogInfo(res.Message);
-                }
-
+                res.IsSuccess = true;
+                res.Message = "Usuarios Obtenidos con éxito";
+                _logger.LogInfo(res.Message);
             }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message);
-            }
-
+            
             return res;
         }
 
         public Response<bool> UpdateUsuario(UsuarioDTO usuario)
         {
             var res = new Response<bool>();
+                        
+            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
 
-            try
+            res.Data = _unitOfWork.UsuarioRepository.UpdateUsuario(usr);
+            if (res.Data)
             {
-                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
-
-                res.Data = _unitOfWork.UsuarioRepository.UpdateUsuario(usr);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Actualizado con éxito";
-                    _logger.LogInfo(res.Message + " " + usr.UsuarioId);
-                }
-
+                res.IsSuccess = true;
+                res.Message = "Usuario Actualizado con éxito";
+                _logger.LogInfo(res.Message + " " + usr.UsuarioId);
             }
-            catch (Exception ex)
-            {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuario.UsuarioId);
-            }
-
+            
             return res;
         }
 
@@ -260,25 +170,15 @@ namespace PruebaEjemploAPI.Application.UseCases
         {
             var res = new Response<bool>();
 
-            try
-            {
-                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
+            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
 
-                res.Data = await _unitOfWork.UsuarioRepository.UpdateUsuarioAsync(usr);
-                if (res.Data)
-                {
-                    res.IsSuccess = true;
-                    res.Message = "Usuario Actualizado con éxito";
-                    _logger.LogInfo(res.Message + " " + usr.UsuarioId);
-                }
-
-            }
-            catch (Exception ex)
+            res.Data = await _unitOfWork.UsuarioRepository.UpdateUsuarioAsync(usr);
+            if (res.Data)
             {
-                res.IsSuccess = false;
-                res.Message = ex.Message;
-                _logger.LogError(res.Message + " " + usuario.UsuarioId);
-            }
+                res.IsSuccess = true;
+                res.Message = "Usuario Actualizado con éxito";
+                _logger.LogInfo(res.Message + " " + usr.UsuarioId);
+            }            
 
             return res;
         }
@@ -312,13 +212,7 @@ namespace PruebaEjemploAPI.Application.UseCases
                     response.IsSuccess = true;
                     response.Message = ex.Message;
                     _logger.LogError(response.Message + " " + nombre + " " + password);
-                }
-                catch(Exception ex)
-                {
-                    response.Message = ex.Message;
-                    _logger.LogError(response.Message + " " + nombre + " " + password);
-                    throw;
-                }
+                }                
             }
 
             return response;

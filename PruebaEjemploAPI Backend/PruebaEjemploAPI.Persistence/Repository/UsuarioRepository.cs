@@ -71,15 +71,23 @@ namespace PruebaEjemploAPI.Persistence.Repository
         {
             var users = _contextDB.Usuarios.Where(x => x.Nombre.Equals(nombre) && x.Password.Equals(password));
 
-            if (users.Any())
+            try
             {
-                var completeUser = users.First();
-                completeUser.Token = BuildToken(completeUser.UsuarioId.ToString());
-                return completeUser;
+
+                if (users.Any())
+                {
+                    var completeUser = users.First();
+                    completeUser.Token = BuildToken(completeUser.UsuarioId.ToString());
+                    return completeUser;
+                }
+                else
+                {
+                    throw new UsuarioNotFoundException("Usuario no encontrado en la base de datos");
+                }
             }
-            else
+            catch (Exception)
             {
-                throw new UsuarioNotFoundException("Usuario no encontrado en la base de datos");
+                throw;
             }
         }
 

@@ -4341,8 +4341,10 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "FluentValidation": "11.11.0",
+          "Microsoft.Extensions.Logging": "9.0.0",
           "PruebaEjemploAPI.Application.DTO": "1.0.0",
-          "PruebaEjemploAPI.Domain.Entity": "1.0.0"
+          "PruebaEjemploAPI.Domain.Entity": "1.0.0",
+          "WatchDog.NET": "1.4.11"
         },
         "compile": {
           "bin/placeholder/PruebaEjemploAPI.Transversal.Common.dll": {}
@@ -11529,8 +11531,7 @@
       "PruebaEjemploAPI.Application.UseCases >= 1.0.0",
       "PruebaEjemploAPI.Application.Validators >= 1.0.0",
       "PruebaEjemploAPI.Persistence >= 1.0.0",
-      "PruebaEjemploAPI.Transversal.Common >= 1.0.0",
-      "WatchDog.NET >= 1.4.11"
+      "PruebaEjemploAPI.Transversal.Common >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -11596,12 +11597,6 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
-        "dependencies": {
-          "WatchDog.NET": {
-            "target": "Package",
-            "version": "[1.4.11, )"
-          }
-        },
         "imports": [
           "net461",
           "net462",
