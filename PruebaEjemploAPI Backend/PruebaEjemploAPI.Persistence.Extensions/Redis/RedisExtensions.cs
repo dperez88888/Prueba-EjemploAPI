@@ -4,12 +4,15 @@ namespace PruebaEjemploAPI.Persistence.Extensions.Redis
 {
     public static class RedisExtensions
     {
-        public static IServiceCollection AddRedisCache(this IServiceCollection services, string connectionString)
+        public static IServiceCollection AddRedisCache(this IServiceCollection services, string connectionString, bool useRedisCache)
         {
-            services.AddStackExchangeRedisCache(opt =>
+            if (useRedisCache)
             {
-                opt.Configuration = connectionString;
-            });
+                services.AddStackExchangeRedisCache(opt =>
+                {
+                    opt.Configuration = connectionString;
+                });
+            }
             return services;
         }
     }

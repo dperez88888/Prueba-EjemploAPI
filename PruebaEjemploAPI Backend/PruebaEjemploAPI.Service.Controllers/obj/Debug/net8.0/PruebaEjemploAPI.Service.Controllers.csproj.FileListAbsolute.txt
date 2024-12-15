@@ -20,3 +20,9 @@ D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Co
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\obj\Debug\net8.0\refint\PruebaEjemploAPI.Service.Controllers.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\obj\Debug\net8.0\PruebaEjemploAPI.Service.Controllers.pdb
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\obj\Debug\net8.0\ref\PruebaEjemploAPI.Service.Controllers.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\bin\Debug\net8.0\PruebaEjemploAPI.Application.UseCases.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\bin\Debug\net8.0\PruebaEjemploAPI.Application.Validators.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\bin\Debug\net8.0\PruebaEjemploAPI.Application.UseCases.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\bin\Debug\net8.0\PruebaEjemploAPI.Application.Validators.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Service.Controllers\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.pdb

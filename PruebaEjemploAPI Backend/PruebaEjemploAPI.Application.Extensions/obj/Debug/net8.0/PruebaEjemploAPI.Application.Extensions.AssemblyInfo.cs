@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PruebaEjemploAPI.Application.Extensions")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84a6e68ce2a1e58901c029e04b63bf70f5182c90")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1687c5be6c9218812e1375cd8108efed101e8f15")]
 [assembly: System.Reflection.AssemblyProductAttribute("PruebaEjemploAPI.Application.Extensions")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PruebaEjemploAPI.Application.Extensions")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

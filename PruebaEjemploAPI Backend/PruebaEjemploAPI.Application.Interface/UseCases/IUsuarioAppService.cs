@@ -30,5 +30,7 @@ namespace PruebaEjemploAPI.Application.Interface.UseCases
 
         Task<Response<bool>> UpdateUsuarioAsync(UsuarioDTO usuario);
 
+        Task<Response<UsuarioDTO>> AuthenticateAsync(string nombre, string password);
+
     }
 }

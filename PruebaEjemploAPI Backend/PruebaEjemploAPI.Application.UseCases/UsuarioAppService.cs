@@ -6,6 +6,7 @@ using PruebaEjemploAPI.Transversal.Common;
 using PruebaEjemploAPI.Application.DTO;
 using PruebaEjemploAPI.Domain.Entity;
 using PruebaEjemploAPI.Transversal.Exceptions;
+using PruebaEjemploAPI.Application.UseCases.Usuarios.Commands.AddUsuarioCommand;
 
 namespace PruebaEjemploAPI.Application.UseCases
 {
@@ -28,15 +29,26 @@ namespace PruebaEjemploAPI.Application.UseCases
         public Response<bool> AddUsuario(UsuarioDTO usuario)
         {
             var res = new Response<bool>();
-                                     
-            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
 
-            res.Data = _unitOfWork.UsuarioRepository.AddUsuario(usr);
-            if (res.Data)
+            var validation = _usuarioValidator.Validate(usuario);
+
+            if (!validation.IsValid)
             {
-                res.IsSuccess = true;
-                res.Message = "Usuario Insertado con éxito";
-                _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+            }
+            else
+            {
+                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
+
+                res.Data = _unitOfWork.UsuarioRepository.AddUsuario(usr);
+                if (res.Data)
+                {
+                    res.IsSuccess = true;
+                    res.Message = "Usuario Insertado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
+                }
             }
 
             return res; 
@@ -45,18 +57,30 @@ namespace PruebaEjemploAPI.Application.UseCases
         public async Task<Response<bool>> AddUsuarioAsync(UsuarioDTO usuario)
         {
             var res = new Response<bool>();
-                        
-            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
 
-            res.Data = await _unitOfWork.UsuarioRepository.AddUsuarioAsync(usr);
-            if (res.Data)
+            var validation = _usuarioValidator.Validate(usuario);
+
+            if (!validation.IsValid)
             {
-                res.IsSuccess = true;
-                res.Message = "Usuario Insertado con éxito";
-                _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+                _logger.LogError(res.Message + " " + validation.Errors + " " + usuario.Nombre + " " + usuario.Apellidos);
+            }
+            else
+            {
+                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
+
+                res.Data = await _unitOfWork.UsuarioRepository.AddUsuarioAsync(usr);
+                if (res.Data)
+                {
+                    res.IsSuccess = true;
+                    res.Message = "Usuario Insertado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.Nombre + " " + usr.Apellidos);
+                }
             }
 
-            return res;
+            return res;            
         }
 
         public Response<bool> DeleteUsuario(int usuarioId)
@@ -152,15 +176,27 @@ namespace PruebaEjemploAPI.Application.UseCases
         public Response<bool> UpdateUsuario(UsuarioDTO usuario)
         {
             var res = new Response<bool>();
-                        
-            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
 
-            res.Data = _unitOfWork.UsuarioRepository.UpdateUsuario(usr);
-            if (res.Data)
+            var validation = _usuarioValidator.Validate(usuario);
+
+            if (!validation.IsValid)
             {
-                res.IsSuccess = true;
-                res.Message = "Usuario Actualizado con éxito";
-                _logger.LogInfo(res.Message + " " + usr.UsuarioId);
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+            }
+            else
+            {
+
+                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
+
+                res.Data = _unitOfWork.UsuarioRepository.UpdateUsuario(usr);
+                if (res.Data)
+                {
+                    res.IsSuccess = true;
+                    res.Message = "Usuario Actualizado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.UsuarioId);
+                }
             }
             
             return res;
@@ -170,15 +206,27 @@ namespace PruebaEjemploAPI.Application.UseCases
         {
             var res = new Response<bool>();
 
-            var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
+            var validation = _usuarioValidator.Validate(usuario);
 
-            res.Data = await _unitOfWork.UsuarioRepository.UpdateUsuarioAsync(usr);
-            if (res.Data)
+            if (!validation.IsValid)
             {
-                res.IsSuccess = true;
-                res.Message = "Usuario Actualizado con éxito";
-                _logger.LogInfo(res.Message + " " + usr.UsuarioId);
-            }            
+                res.IsSuccess = false;
+                res.Message = "Errores de Validación";
+                res.Errors = validation.Errors;
+            }
+            else
+            {
+
+                var usr = _mapper.Map<UsuarioDTO, Usuario>(usuario);
+
+                res.Data = await _unitOfWork.UsuarioRepository.UpdateUsuarioAsync(usr);
+                if (res.Data)
+                {
+                    res.IsSuccess = true;
+                    res.Message = "Usuario Actualizado con éxito";
+                    _logger.LogInfo(res.Message + " " + usr.UsuarioId);
+                }
+            }
 
             return res;
         }
@@ -216,6 +264,40 @@ namespace PruebaEjemploAPI.Application.UseCases
             }
 
             return response;
-        }                
+        }
+
+        public async Task<Response<UsuarioDTO>> AuthenticateAsync(string nombre, string password)
+        {
+            var response = new Response<UsuarioDTO>();
+
+            var validation = _usuarioValidator.Validate(new UsuarioDTO() { Nombre = nombre, Password = password, Apellidos = "x" });
+
+            if (!validation.IsValid)
+            {
+                response.Message = "Errores de Validación";
+                response.IsSuccess = false;
+                response.Errors = validation.Errors;
+                _logger.LogError(response.Message + " " + response.Errors + " " + nombre + " " + password);
+            }
+            else
+            {
+                try
+                {
+                    var user = await _unitOfWork.UsuarioRepository.AuthenticateAsync(nombre, password);
+                    response.Data = _mapper.Map<Usuario, UsuarioDTO>(user);
+                    response.IsSuccess = true;
+                    response.Message = "Autenticación válida";
+                    _logger.LogInfo(response.Message + " " + nombre + " " + password);
+                }
+                catch (UsuarioNotFoundException ex)
+                {
+                    response.IsSuccess = true;
+                    response.Message = ex.Message;
+                    _logger.LogError(response.Message + " " + nombre + " " + password);
+                }
+            }
+
+            return response;
+        }
     }
 }

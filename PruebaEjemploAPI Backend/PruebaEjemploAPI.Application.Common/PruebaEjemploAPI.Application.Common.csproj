@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PruebaEjemploAPI.Application.DTO\PruebaEjemploAPI.Application.DTO.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI.Application.UseCases\PruebaEjemploAPI.Application.UseCases.csproj" />
     <ProjectReference Include="..\PruebaEjemploAPI.Domain.Entity\PruebaEjemploAPI.Domain.Entity.csproj" />
     <ProjectReference Include="..\PruebaEjemploAPI.Transversal.Common\PruebaEjemploAPI.Transversal.Common.csproj" />
   </ItemGroup>

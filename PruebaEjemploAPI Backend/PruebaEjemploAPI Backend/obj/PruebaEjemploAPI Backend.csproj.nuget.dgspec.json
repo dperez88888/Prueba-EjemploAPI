@@ -182,8 +182,14 @@
               "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.DTO\\PruebaEjemploAPI.Application.DTO.csproj": {
                 "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.DTO\\PruebaEjemploAPI.Application.DTO.csproj"
               },
+              "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj": {
+                "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj"
+              },
               "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Domain.Entity\\PruebaEjemploAPI.Domain.Entity.csproj": {
                 "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Domain.Entity\\PruebaEjemploAPI.Domain.Entity.csproj"
+              },
+              "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Transversal.Common\\PruebaEjemploAPI.Transversal.Common.csproj": {
+                "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Transversal.Common\\PruebaEjemploAPI.Transversal.Common.csproj"
               }
             }
           }
@@ -537,6 +543,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
             },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
@@ -951,6 +961,9 @@
               },
               "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Interface\\PruebaEjemploAPI.Application.Interface.csproj": {
                 "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Interface\\PruebaEjemploAPI.Application.Interface.csproj"
+              },
+              "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj": {
+                "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj"
               }
             }
           }
@@ -977,6 +990,10 @@
             "Asp.Versioning.Mvc.ApiExplorer": {
               "target": "Package",
               "version": "[8.1.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
             }
           },
           "imports": [
@@ -1134,6 +1151,14 @@
             "FluentValidation": {
               "target": "Package",
               "version": "[11.11.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "WatchDog.NET": {
+              "target": "Package",
+              "version": "[1.4.11, )"
             }
           },
           "imports": [
@@ -1278,12 +1303,6 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "dependencies": {
-            "WatchDog.NET": {
-              "target": "Package",
-              "version": "[1.4.11, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",

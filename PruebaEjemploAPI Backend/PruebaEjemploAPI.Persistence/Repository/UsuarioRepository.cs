@@ -73,11 +73,33 @@ namespace PruebaEjemploAPI.Persistence.Repository
 
             try
             {
-
                 if (users.Any())
                 {
                     var completeUser = users.First();
                     completeUser.Token = BuildToken(completeUser.UsuarioId.ToString());
+                    return completeUser;
+                }
+                else
+                {
+                    throw new UsuarioNotFoundException("Usuario no encontrado en la base de datos");
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public async Task<Usuario> AuthenticateAsync(string nombre, string password)
+        {
+            var users = _contextDB.Usuarios.Where(x => x.Nombre.Equals(nombre) && x.Password.Equals(password));
+
+            try
+            {
+                if (users.Any())
+                {
+                    var completeUser = users.First();
+                    completeUser.Token = await BuildTokenAsync(completeUser.UsuarioId.ToString());
                     return completeUser;
                 }
                 else
@@ -153,6 +175,11 @@ namespace PruebaEjemploAPI.Persistence.Repository
             var token = tokenHandler.CreateToken(tokenDescr);
             var tokenString = tokenHandler.WriteToken(token);
             return tokenString;
+        }
+
+        private async Task<string> BuildTokenAsync(string userId)
+        {
+            return this.BuildToken(userId);
         }
     }
 }

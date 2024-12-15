@@ -40,7 +40,7 @@ builder.Services.AddAuthenticationServices(appSettingsTokenSection);
 builder.Services.AddValidator();
 builder.Services.AddHealthCheck(builder.Configuration.GetConnectionString("DefaultConnectionAzure"), builder.Configuration.GetConnectionString("RedisConnectionAzure"));
 builder.Services.AddWatchDog(builder.Configuration.GetConnectionString("DefaultWatchDogConnectionAzure"));
-builder.Services.AddRedisCache(builder.Configuration.GetConnectionString("RedisConnectionAzure"));
+builder.Services.AddRedisCache(builder.Configuration.GetConnectionString("RedisConnectionAzure"), (bool)builder.Configuration.GetValue(typeof(bool), "UseRedisCache"));
 
 var appSettingsRateLimiting = builder.Configuration.GetSection("RateLimiting");
 builder.Services.Configure<AppRateLimitingSettings>(appSettingsRateLimiting);

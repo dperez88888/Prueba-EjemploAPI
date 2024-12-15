@@ -9,11 +9,13 @@
   <ItemGroup>
     <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.0" />
     <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.0" />
+    <PackageReference Include="MediatR" Version="12.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PruebaEjemploAPI.Application.DTO\PruebaEjemploAPI.Application.DTO.csproj" />
     <ProjectReference Include="..\PruebaEjemploAPI.Application.Interface\PruebaEjemploAPI.Application.Interface.csproj" />
+    <ProjectReference Include="..\PruebaEjemploAPI.Application.UseCases\PruebaEjemploAPI.Application.UseCases.csproj" />
   </ItemGroup>
 
 </Project>

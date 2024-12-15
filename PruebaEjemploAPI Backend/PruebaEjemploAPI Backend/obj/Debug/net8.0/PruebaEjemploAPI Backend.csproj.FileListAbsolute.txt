@@ -390,3 +390,5 @@ D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\ob
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\obj\Debug\net8.0\PruebaEjemploAPI Backend.MvcApplicationPartsAssemblyInfo.cs
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\PruebaEjemploAPI.Service.Controllers.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\PruebaEjemploAPI.Service.Controllers.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\MediatR.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI Backend\bin\Debug\net8.0\MediatR.Contracts.dll

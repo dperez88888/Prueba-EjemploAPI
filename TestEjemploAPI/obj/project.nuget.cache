@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "x1cVjxqmNMTu75WV0cVn+OHIJJsJ7kPenBF+Y25AquXGB4pREsYvgavMzpAKh6gJ5bvfw3TrUQbRbZiai/WZ/A==",
+  "dgSpecHash": "nsep9sy/vj6zsbHE/uC89fwcDh5RQzJ9yduPkauZL1vuAeLxFzanE7m0woiwdzMgXCFBxIcBrEE6xZRK1Zv34w==",
   "success": true,
   "projectFilePath": "D:\\Github\\Prueba EjemploAPI\\TestEjemploAPI\\TestEjemploAPI.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,8 @@
     "C:\\Users\\David\\.nuget\\packages\\k4os.hash.xxhash\\1.0.6\\k4os.hash.xxhash.1.0.6.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\kubernetesclient\\14.0.2\\kubernetesclient.14.0.2.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\litedb\\5.0.11\\litedb.5.0.11.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\mediatr\\12.4.1\\mediatr.12.4.1.nupkg.sha512",
+    "C:\\Users\\David\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.applicationinsights\\2.22.0\\microsoft.applicationinsights.2.22.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\David\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

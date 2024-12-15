@@ -31,7 +31,7 @@ namespace PruebaEjemploAPI.Application.Interface.Persistence
 
         Task<bool> UpdateUsuarioAsync(Usuario usuario);
 
-
+        Task<Usuario> AuthenticateAsync(string nombre, string password);
 
     }
 }

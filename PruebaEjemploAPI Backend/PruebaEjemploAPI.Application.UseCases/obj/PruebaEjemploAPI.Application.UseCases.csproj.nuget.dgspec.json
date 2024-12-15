@@ -198,6 +198,10 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
+            },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[9.0.0, )"

@@ -16,3 +16,13 @@ D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Applicatio
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\obj\Debug\net8.0\refint\PruebaEjemploAPI.Application.Common.dll
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\obj\Debug\net8.0\PruebaEjemploAPI.Application.Common.pdb
 D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\obj\Debug\net8.0\ref\PruebaEjemploAPI.Application.Common.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Application.Interface.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Application.UseCases.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Application.Validators.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Common.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.dll
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Application.UseCases.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Common.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Application.Interface.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Application.Validators.pdb
+D:\Github\Prueba EjemploAPI\PruebaEjemploAPI Backend\PruebaEjemploAPI.Application.Common\bin\Debug\net8.0\PruebaEjemploAPI.Transversal.Exceptions.pdb

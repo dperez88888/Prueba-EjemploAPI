@@ -153,7 +153,7 @@ namespace PruebaEjemploAPI.Application.UseCases
             var res = new Response<List<ClienteDTO>>();
             var cacheKey = "clientesList";
                            
-            var redisClientes = _distributedCache.Get(cacheKey);
+            var redisClientes = _distributedCache?.Get(cacheKey);
             if (redisClientes != null)
             {
                 res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
@@ -167,8 +167,9 @@ namespace PruebaEjemploAPI.Application.UseCases
                     var opt = new DistributedCacheEntryOptions()
                         .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
                         .SetSlidingExpiration(TimeSpan.FromMinutes(60));
-
-                    _distributedCache.Set(cacheKey, serializedClientes, opt);
+                    
+                    _distributedCache?.Set(cacheKey, serializedClientes, opt);
+                    
                 }
             }
                 
@@ -187,7 +188,7 @@ namespace PruebaEjemploAPI.Application.UseCases
             var res = new Response<List<ClienteDTO>>();
             var cacheKey = "clientesList";
                         
-            var redisClientes = await _distributedCache.GetAsync(cacheKey);
+            var redisClientes = await _distributedCache?.GetAsync(cacheKey);
             if (redisClientes != null)
             {
                 res.Data = JsonSerializer.Deserialize<List<ClienteDTO>>(redisClientes);
@@ -203,7 +204,8 @@ namespace PruebaEjemploAPI.Application.UseCases
                         .SetAbsoluteExpiration(DateTime.Now.AddDays(1))
                         .SetSlidingExpiration(TimeSpan.FromMinutes(60));
 
-                    await _distributedCache.SetAsync(cacheKey, serializedClientes, opt);
+                    await _distributedCache?.SetAsync(cacheKey, serializedClientes, opt);
+                    
                 }
             }
 

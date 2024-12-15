@@ -182,6 +182,9 @@
               "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.DTO\\PruebaEjemploAPI.Application.DTO.csproj": {
                 "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.DTO\\PruebaEjemploAPI.Application.DTO.csproj"
               },
+              "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj": {
+                "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj"
+              },
               "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Domain.Entity\\PruebaEjemploAPI.Domain.Entity.csproj": {
                 "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Domain.Entity\\PruebaEjemploAPI.Domain.Entity.csproj"
               },
@@ -540,6 +543,10 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
             },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
@@ -954,6 +961,9 @@
               },
               "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Interface\\PruebaEjemploAPI.Application.Interface.csproj": {
                 "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.Interface\\PruebaEjemploAPI.Application.Interface.csproj"
+              },
+              "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj": {
+                "projectPath": "D:\\Github\\Prueba EjemploAPI\\PruebaEjemploAPI Backend\\PruebaEjemploAPI.Application.UseCases\\PruebaEjemploAPI.Application.UseCases.csproj"
               }
             }
           }
@@ -980,6 +990,10 @@
             "Asp.Versioning.Mvc.ApiExplorer": {
               "target": "Package",
               "version": "[8.1.0, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.4.1, )"
             }
           },
           "imports": [
